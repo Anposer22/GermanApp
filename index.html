@@ -92,7 +92,7 @@
         }
         
         .wider-container {
-            max-width: 700px; /* Increased from 500px to 700px */
+            max-width: 1000px; /* Increased from 800px to 1000px for more space */
         }
 
         .form-group {
@@ -311,19 +311,42 @@
         }
         
         /* Column widths */
-        .word-table th:nth-child(1), .word-table td:nth-child(1),
+        .word-table th:nth-child(1), .word-table td:nth-child(1) {
+            width: 20%; /* Increased from 30% */
+            text-align: left;
+        }
+
         .word-table th:nth-child(2), .word-table td:nth-child(2) {
-            width: 30%;
+            width: 16%; /* Increased from 25% */
+            text-align: left;
         }
-        
+
         .word-table th:nth-child(3), .word-table td:nth-child(3) {
-            width: 20%;
+            width: 8%; /* Decreased from 15% */
+            text-align: left;
         }
-        
+
         .word-table th:nth-child(4), .word-table td:nth-child(4) {
-            width: 20%;
+            width:3%; /* Decreased from 15% */
+            text-align: center;
+        }
+
+        .word-table th:nth-child(5), .word-table td:nth-child(5) {
+            width: 12%; /* Decreased slightly */
+            text-align: center;
         }
         
+        /* Make Type, Knowledge, and Actions columns more compact */
+        .word-table th:nth-child(3), 
+        .word-table td:nth-child(3),
+        .word-table th:nth-child(4), 
+        .word-table td:nth-child(4),
+        .word-table th:nth-child(5), 
+        .word-table td:nth-child(5) {
+            padding-left: 0px;
+            padding-right: 5px;
+        }
+
         .word-table tr {
             transition: all 0.2s ease;
             box-shadow: 0 2px 6px rgba(0,0,0,0.08);
@@ -343,7 +366,7 @@
         .word-row td:first-child {
             border-top-left-radius: var(--border-radius);
             border-bottom-left-radius: var(--border-radius);
-            padding-left: 24px; /* More space for color marker */
+            padding-left: 30px; /* More space for color marker */
         }
         
         .word-row td:last-child {
@@ -382,6 +405,40 @@
             box-shadow: inset 0 0 10px rgba(251, 188, 5, 0.4);
         }
         
+        /* 2. Enhanced Knowledge Level Progress Bar in Word List */
+        .knowledge-level {
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 24px;
+            background-color: #f5f5f5;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 100%;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .knowledge-level-bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: linear-gradient(to right, #70cef6, #4285f4);
+            border-radius: 12px;
+            transition: width 0.3s ease;
+        }
+
+        .knowledge-level-text {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark);
+            text-shadow: 0 0 3px rgba(255,255,255,0.7);
+        }
+
         .word-actions {
             display: flex;
             align-items: center;
@@ -391,10 +448,10 @@
         .delete-btn {
             position: absolute;
             top: 50%;
-            right: 20px;
+            right: 25px;
             transform: translateY(-50%);
-            width: 24px;
-            height: 24px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             background-color: transparent;
             color: var(--danger);
@@ -404,7 +461,7 @@
             cursor: pointer;
             font-weight: bold;
             border: none;
-            font-size: 18px;
+            font-size: 20px;
             text-shadow: 0 1px 2px rgba(0,0,0,0.2);
             z-index: 5;
             transition: transform 0.2s ease, color 0.2s ease;
@@ -417,13 +474,13 @@
         
         .edit-btn {
             position: absolute;
-            left: 15px;
+            left: 25px;
             top: 50%;
             transform: translateY(-50%);
             background-color: var(--primary);
             color: white;
             border: none;
-            padding: 8px 18px;
+            padding: 8px 20px;
             border-radius: var(--border-radius);
             cursor: pointer;
             font-weight: 500;
@@ -471,7 +528,7 @@
         
         /* Edit mode styling */
         .edit-mode td {
-            padding: 15px 20px;
+            padding: 20px 25px;
         }
         
         .edit-mode input,
@@ -481,13 +538,19 @@
             width: 100%;
         }
         
+        .edit-mode .edit-german {
+            min-width: 120px; /* Ensure minimum width for German word input */
+        }
+        
         .edit-mode .article-select {
+            position: relative;            /* Enable independent positioning */
             width: 70px;
+            right: 10px;
         }
         
         .edit-actions {
             display: flex;
-            gap: 10px;
+            gap: 15px;
             justify-content: center;
         }
         
@@ -499,6 +562,7 @@
             border: none;
             box-shadow: 0 2px 6px rgba(0,0,0,0.2);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            min-width: 80px;
         }
         
         .save-btn {
@@ -552,6 +616,99 @@
             width: 0%;
             background-color: var(--primary);
             transition: width 0.3s ease;
+        }
+
+        
+        /* 1. Enhanced Knowledge Level Threshold Bar in Practice Tab */
+        .knowledge-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            outline: none;
+            margin: 15px 0;
+            background: #eee;
+            position: relative;
+        }
+
+        /* For Webkit browsers (Chrome, Safari, newer Edge) */
+        .knowledge-slider::-webkit-slider-runnable-track {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to right, var(--primary) 0%, var(--primary) var(--slider-fill, 0%), #eee var(--slider-fill, 0%), #eee 100%);
+        }
+
+        .knowledge-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            margin-top: -6px; /* Centers the thumb on the track */
+        }
+
+        /* For Firefox */
+        .knowledge-slider::-moz-range-track {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to right, var(--primary) 0%, var(--primary) var(--slider-fill, 0%), #eee var(--slider-fill, 0%), #eee 100%);
+        }
+
+        .knowledge-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            border: none;
+        }
+
+        .knowledge-slider::-moz-range-track {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to right, var(--primary) 0%, var(--primary) var(--slider-fill, 50%), #eee var(--slider-fill, 50%), #eee 100%);
+        }
+
+        .knowledge-value {
+            display: inline-block;
+            min-width: 50px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba(66, 133, 244, 0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .knowledge-filter {
+            position: relative;
+            padding: 0 10px;
+            margin-bottom: 25px;
+        }
+
+        .knowledge-filter::before {
+            content: '0%';
+            position: absolute;
+            left: 0;
+            bottom: -20px;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .knowledge-filter::after {
+            content: '100%';
+            position: absolute;
+            right: 0;
+            bottom: -20px;
+            font-size: 0.8rem;
+            color: var(--gray);
         }
         
         .number-input {
@@ -720,6 +877,118 @@
             border-left: 3px solid var(--warning);
         }
 
+        /* User management */
+        .user-management {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .user-select {
+            width: auto;
+            min-width: 150px;
+            padding: 8px 12px;
+        }
+        
+        .user-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .user-btn {
+            padding: 8px 12px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 500;
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .user-btn.danger {
+            background-color: var(--danger);
+        }
+        
+        .user-form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Dialog for confirmation */
+        .confirm-dialog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .confirm-dialog.active {
+            display: flex;
+        }
+        
+        .confirm-dialog-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-width: 400px;
+            width: 90%;
+        }
+        
+        .confirm-dialog-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .confirm-dialog-message {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .confirm-dialog-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        
+        /* Article color square */
+        .article-square {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+            border-radius: 3px;
+            vertical-align: middle;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .article-der {
+            background-color: #4285f4; /* Blue for der */
+        }
+        
+        .article-die {
+            background-color: #ff00ff; /* Pink for die */
+        }
+        
+        .article-das {
+            background-color: #00cc00; /* Green for das */
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 2rem;
@@ -728,6 +997,21 @@
             .container {
                 padding: 20px;
             }
+            
+            .user-management {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .user-form {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .confirm-dialog-content {
+                width: 95%;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -735,6 +1019,38 @@
     <header>
         <h1>Vokabel Trainer</h1>
         <p class="subtitle">Learn German and English vocabulary</p>
+        
+        <!-- User Management Section -->
+        <div class="user-management">
+            <div class="user-select-container">
+                <select id="user-select" class="user-select">
+                    <option value="">Select User</option>
+                    <!-- Users will be populated here -->
+                </select>
+            </div>
+            <div id="add-user-btn-container">
+                <button id="add-user-btn" class="user-btn">Add New User</button>
+                <button id="remove-user-btn" class="user-btn danger">Remove User</button>
+            </div>
+            <div id="add-user-form" class="user-form hidden">
+                <input type="text" id="new-user-name" placeholder="Enter name">
+                <button id="save-user-btn" class="user-btn">Save</button>
+                <button id="cancel-user-btn" class="user-btn">Cancel</button>
+            </div>
+        </div>
+        
+        <!-- Confirmation Dialog -->
+        <div id="confirm-dialog" class="confirm-dialog">
+            <div class="confirm-dialog-content">
+                <div class="confirm-dialog-title">Remove User</div>
+                <div class="confirm-dialog-message">Are you sure you want to remove this user? This action cannot be undone.</div>
+                <div class="confirm-dialog-actions">
+                    <button id="confirm-cancel-btn" class="user-btn">Cancel</button>
+                    <button id="confirm-delete-btn" class="user-btn danger">Remove</button>
+                </div>
+            </div>
+        </div>
+        
         <div class="mode-toggle">
             <button class="mode-btn active" data-mode="input">Add Words</button>
             <button class="mode-btn" data-mode="game">Practice</button>
@@ -792,6 +1108,7 @@
                         <th>German</th>
                         <th>English</th>
                         <th>Type</th>
+                        <th>Knowledge</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -827,6 +1144,14 @@
                     <label class="type-filter-option type-filter-other">
                         <input type="checkbox" id="filter-other" class="type-filter-checkbox"> Others
                     </label>
+                </div>
+            </div>
+            
+            <!-- Knowledge Level Filter -->
+            <div class="form-group">
+                <label>Maximum knowledge level to practice: <span id="knowledge-value" class="knowledge-value">100%</span></label>
+                <div class="knowledge-filter">
+                    <input type="range" id="knowledge-level-filter" class="knowledge-slider" min="0" max="100" value="100" step="5">
                 </div>
             </div>
             
@@ -910,6 +1235,7 @@
             </div>
             
             <button class="btn btn-primary" id="practice-again">Practice Again</button>
+            <button class="btn btn-secondary" id="practice-failed">Practice Failed Words</button>
             <button class="btn btn-secondary" id="change-settings">Change Settings</button>
         </div>
     </div>
@@ -927,28 +1253,6 @@
             measurementId: "G-L9LP0L7B2X"
         };
 
-        // Initialize Firebase with error handling
-        let database;
-        try {
-            console.log("Initializing Firebase...");
-            firebase.initializeApp(firebaseConfig);
-            database = firebase.database();
-            console.log("Firebase initialized successfully");
-            
-            // Test database connection
-            database.ref('.info/connected').on('value', function(snapshot) {
-                if (snapshot.val() === true) {
-                    showStatus("Connected to Firebase database", "success", 3000);
-                    updateWordCount();
-                } else {
-                    showStatus("Disconnected from Firebase database", "error");
-                }
-            });
-        } catch (error) {
-            console.error("Firebase initialization error:", error);
-            showStatus("Firebase error: " + error.message, "error");
-        }
-        
         // DOM Elements
         const modeButtons = document.querySelectorAll('.mode-btn');
         const wordTypeButtons = document.querySelectorAll('.word-type-btn');
@@ -978,6 +1282,25 @@
         const correctCountElement = document.getElementById('correct-count');
         const incorrectCountElement = document.getElementById('incorrect-count');
         
+        // User management elements
+        const userSelect = document.getElementById('user-select');
+        const addUserBtn = document.getElementById('add-user-btn');
+        const removeUserBtn = document.getElementById('remove-user-btn');
+        const addUserBtnContainer = document.getElementById('add-user-btn-container');
+        const addUserForm = document.getElementById('add-user-form');
+        const newUserName = document.getElementById('new-user-name');
+        const saveUserBtn = document.getElementById('save-user-btn');
+        const cancelUserBtn = document.getElementById('cancel-user-btn');
+        
+        // Confirmation dialog elements
+        const confirmDialog = document.getElementById('confirm-dialog');
+        const confirmCancelBtn = document.getElementById('confirm-cancel-btn');
+        const confirmDeleteBtn = document.getElementById('confirm-delete-btn');
+        
+        // Knowledge level elements
+        const knowledgeLevelFilter = document.getElementById('knowledge-level-filter');
+        const knowledgeValueDisplay = document.getElementById('knowledge-value');
+        
         // Practice configuration elements
         const practiceConfig = document.getElementById('practice-config');
         const practiceArea = document.getElementById('practice-area');
@@ -991,6 +1314,7 @@
         const currentWordNum = document.getElementById('current-word-num');
         const totalWordsNum = document.getElementById('total-words-num');
         const practiceAgainButton = document.getElementById('practice-again');
+        const practiceFailedButton = document.getElementById('practice-failed');
         const changeSettingsButton = document.getElementById('change-settings');
         const summaryCorrect = document.getElementById('summary-correct');
         const summaryIncorrect = document.getElementById('summary-incorrect');
@@ -1006,6 +1330,49 @@
         let practiceWords = [];
         let currentWordIndex = 0;
         let selectedWordIds = [];
+        let failedWords = [];
+        let currentUserId = null;
+        let users = [];
+        let userKnowledgeLevels = {};
+        
+        // Knowledge level related constants
+        const KNOWLEDGE_INCREMENT = 10; // +10% for correct answers
+        const KNOWLEDGE_DECREMENT = 5;  // -5% for incorrect answers
+        const KNOWLEDGE_PARTIAL_DECREMENT = 2.5; // -2.5% for partially incorrect answers (wrong article)
+
+        // Initialize Firebase with error handling
+        let database;
+        try {
+            console.log("Initializing Firebase...");
+            firebase.initializeApp(firebaseConfig);
+            database = firebase.database();
+            console.log("Firebase initialized successfully");
+            
+            // Test database connection
+            database.ref('.info/connected').on('value', function(snapshot) {
+                if (snapshot.val() === true) {
+                    showStatus("Connected to Firebase database", "success", 3000);
+                    updateWordCount();
+                    loadUsers(); // Load users when connected
+                } else {
+                    showStatus("Disconnected from Firebase database", "error");
+                }
+            });
+        } catch (error) {
+            console.error("Firebase initialization error:", error);
+            showStatus("Firebase error: " + error.message, "error");
+        }
+        
+        // DOM content loaded event
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make sure remove button state is correct
+            if (removeUserBtn) {
+                // Set a timeout to ensure this runs after Firebase has initialized
+                setTimeout(() => {
+                    removeUserBtn.disabled = !currentUserId;
+                }, 500);
+            }
+        });
 
         // Show status message
         function showStatus(message, type, duration = 0) {
@@ -1019,6 +1386,227 @@
                     statusBar.classList.add('hidden');
                 }, duration);
             }
+        }
+        
+        // User Management Functions
+        function loadUsers() {
+            if (!database) {
+                showStatus("Firebase is not connected. Please try again later.", "error");
+                return;
+            }
+            
+            database.ref('users').once('value')
+                .then(snapshot => {
+                    // Clear current options except the default
+                    while (userSelect.options.length > 1) {
+                        userSelect.remove(1);
+                    }
+                    
+                    if (!snapshot.exists()) {
+                        // No users yet, keep the default option only
+                        return;
+                    }
+                    
+                    const userData = snapshot.val();
+                    users = [];
+                    
+                    // Create options for each user
+                    for (const userId in userData) {
+                        const user = userData[userId];
+                        users.push({
+                            id: userId,
+                            name: user.name
+                        });
+                        
+                        const option = document.createElement('option');
+                        option.value = userId;
+                        option.textContent = user.name;
+                        userSelect.appendChild(option);
+                    }
+                    
+                    // If there was a selected user before, select them again
+                    if (currentUserId && users.some(user => user.id === currentUserId)) {
+                        userSelect.value = currentUserId;
+                    } else if (users.length > 0) {
+                        // Select the first user if none was selected
+                        userSelect.value = users[0].id;
+                        currentUserId = users[0].id;
+                    }
+                    
+                    // Enable/disable remove button based on selection
+                    if (removeUserBtn) {
+                        removeUserBtn.disabled = !currentUserId;
+                    }
+                    
+                    // Load word knowledge for the selected user
+                    if (currentUserId) {
+                        loadUserKnowledge();
+                    }
+                })
+                .catch(error => {
+                    console.error("Error loading users:", error);
+                    showStatus("Error loading users: " + error.message, "error");
+                });
+        }
+        
+        // Add a new user
+        function addNewUser(name) {
+            if (!name.trim()) {
+                showStatus("Please enter a valid name.", "warning");
+                return;
+            }
+            
+            if (!database) {
+                showStatus("Firebase is not connected. Please try again later.", "error");
+                return;
+            }
+            
+            // Create new user in database
+            const newUserRef = database.ref('users').push();
+            
+            newUserRef.set({
+                name: name.trim(),
+                createdAt: Date.now()
+            })
+            .then(() => {
+                const userId = newUserRef.key;
+                
+                // Initialize knowledge levels for all existing words
+                initializeWordsForNewUser(userId)
+                    .then(() => {
+                        showStatus(`User "${name}" added successfully!`, "success", 3000);
+                        
+                        // Reload users list
+                        loadUsers();
+                        
+                        // Reset the form
+                        newUserName.value = '';
+                        addUserForm.classList.add('hidden');
+                        addUserBtnContainer.classList.remove('hidden');
+                        
+                        // Set as current user
+                        currentUserId = userId;
+                    })
+                    .catch(error => {
+                        console.error("Error initializing words for new user:", error);
+                        showStatus("Error initializing words: " + error.message, "error");
+                    });
+            })
+            .catch(error => {
+                console.error("Error adding user:", error);
+                showStatus("Error adding user: " + error.message, "error");
+            });
+        }
+        
+        // Initialize knowledge levels for a new user
+        function initializeWordsForNewUser(userId) {
+            return new Promise((resolve, reject) => {
+                if (!database) {
+                    reject(new Error("Firebase is not connected"));
+                    return;
+                }
+                
+                database.ref('words').once('value')
+                    .then(snapshot => {
+                        if (!snapshot.exists()) {
+                            // No words yet, nothing to initialize
+                            resolve();
+                            return;
+                        }
+                        
+                        const words = snapshot.val();
+                        const updates = {};
+                        
+                        // For each word, add knowledge level for the new user
+                        for (const wordId in words) {
+                            updates[`words/${wordId}/knowledge/${userId}`] = 0;
+                        }
+                        
+                        // Update all words at once
+                        database.ref().update(updates)
+                            .then(() => {
+                                resolve();
+                            })
+                            .catch(error => {
+                                reject(error);
+                            });
+                    })
+                    .catch(error => {
+                        reject(error);
+                    });
+            });
+        }
+        
+        // Load knowledge levels for the current user
+        function loadUserKnowledge() {
+            if (!currentUserId || !database) {
+                return;
+            }
+            
+            database.ref('words').once('value')
+                .then(snapshot => {
+                    if (!snapshot.exists()) {
+                        return;
+                    }
+                    
+                    const words = snapshot.val();
+                    userKnowledgeLevels = {};
+                    
+                    // Extract knowledge levels for the current user
+                    for (const wordId in words) {
+                        const word = words[wordId];
+                        if (word.knowledge && word.knowledge[currentUserId] !== undefined) {
+                            userKnowledgeLevels[wordId] = word.knowledge[currentUserId];
+                        } else {
+                            // If no knowledge level exists, initialize to 0
+                            userKnowledgeLevels[wordId] = 0;
+                            // Update in database
+                            database.ref(`words/${wordId}/knowledge/${currentUserId}`).set(0)
+                                .catch(error => {
+                                    console.error("Error initializing knowledge level:", error);
+                                });
+                        }
+                    }
+                    
+                    // If in list mode, refresh the word list
+                    if (!listContainer.classList.contains('hidden')) {
+                        loadWordList();
+                    }
+                })
+                .catch(error => {
+                    console.error("Error loading user knowledge:", error);
+                });
+        }
+        
+        // Update knowledge level for a word
+        function updateKnowledgeLevel(wordId, isCorrect, isPartiallyCorrect = false) {
+            if (!currentUserId || !database) {
+                return;
+            }
+            
+            // Get current knowledge level
+            let currentLevel = userKnowledgeLevels[wordId] || 0;
+            
+            // Calculate new level
+            let newLevel;
+            if (isCorrect) {
+                newLevel = Math.min(100, currentLevel + KNOWLEDGE_INCREMENT);
+            } else if (isPartiallyCorrect) {
+                newLevel = Math.max(0, currentLevel - KNOWLEDGE_PARTIAL_DECREMENT);
+            } else {
+                newLevel = Math.max(0, currentLevel - KNOWLEDGE_DECREMENT);
+            }
+            
+            // Update in local state
+            userKnowledgeLevels[wordId] = newLevel;
+            
+            // Update in database
+            database.ref(`words/${wordId}/knowledge/${currentUserId}`).set(newLevel)
+                .catch(error => {
+                    console.error("Error updating knowledge level:", error);
+                });
+                
+            return newLevel;
         }
 
         // Event listeners for mode switching
@@ -1039,6 +1627,12 @@
                 if (mode === 'input') {
                     inputContainer.classList.remove('hidden');
                 } else if (mode === 'game') {
+                    // Check if user is selected
+                    if (!currentUserId) {
+                        showStatus("Please select or add a user first.", "warning");
+                        return;
+                    }
+                    
                     gameContainer.classList.remove('hidden');
                     initializePractice();
                 } else if (mode === 'list') {
@@ -1068,11 +1662,144 @@
                 }
             });
         });
+        
+        // User management event listeners
+        userSelect.addEventListener('change', function() {
+            const userId = this.value;
+            if (userId) {
+                currentUserId = userId;
+                loadUserKnowledge();
+                showStatus(`Switched to user: ${this.options[this.selectedIndex].text}`, "success", 3000);
+                
+                // Enable remove user button if a user is selected
+                removeUserBtn.disabled = false;
+            } else {
+                currentUserId = null;
+                userKnowledgeLevels = {};
+                showStatus("No user selected", "warning");
+                
+                // Disable remove user button if no user is selected
+                removeUserBtn.disabled = true;
+            }
+        });
+        
+        addUserBtn.addEventListener('click', function() {
+            // Show the add user form
+            addUserBtnContainer.classList.add('hidden');
+            addUserForm.classList.remove('hidden');
+            newUserName.focus();
+        });
+        
+        saveUserBtn.addEventListener('click', function() {
+            addNewUser(newUserName.value);
+        });
+        
+        cancelUserBtn.addEventListener('click', function() {
+            // Hide the form, show the button
+            addUserForm.classList.add('hidden');
+            addUserBtnContainer.classList.remove('hidden');
+            newUserName.value = '';
+        });
+        
+        // Remove user functionality
+        removeUserBtn.addEventListener('click', function() {
+            if (!currentUserId) {
+                showStatus("Please select a user first", "warning");
+                return;
+            }
+            
+            // Show confirmation dialog
+            confirmDialog.classList.add('active');
+        });
+        
+        confirmCancelBtn.addEventListener('click', function() {
+            // Hide dialog without taking action
+            confirmDialog.classList.remove('active');
+        });
+        
+        confirmDeleteBtn.addEventListener('click', function() {
+            // Proceed with user removal
+            removeUser(currentUserId);
+            confirmDialog.classList.remove('active');
+        });
+        
+        // Function to remove a user
+        function removeUser(userId) {
+            if (!database || !userId) {
+                showStatus("Cannot remove user", "error");
+                return;
+            }
+            
+            // Get user name for the status message
+            const userName = userSelect.options[userSelect.selectedIndex].text;
+            
+            // Remove user from database
+            database.ref('users/' + userId).remove()
+                .then(() => {
+                    // Clear knowledge data for this user from all words
+                    return database.ref('words').once('value');
+                })
+                .then(snapshot => {
+                    if (snapshot.exists()) {
+                        const words = snapshot.val();
+                        const updates = {};
+                        
+                        // For each word, remove knowledge level for this user
+                        for (const wordId in words) {
+                            if (words[wordId].knowledge && words[wordId].knowledge[userId]) {
+                                updates[`words/${wordId}/knowledge/${userId}`] = null;
+                            }
+                        }
+                        
+                        // Update all words at once
+                        return database.ref().update(updates);
+                    }
+                })
+                .then(() => {
+                    showStatus(`User "${userName}" removed successfully!`, "success", 3000);
+                    
+                    // Reset current user if it was the one removed
+                    currentUserId = null;
+                    userKnowledgeLevels = {};
+                    
+                    // Reload users list
+                    loadUsers();
+                })
+                .catch(error => {
+                    console.error("Error removing user:", error);
+                    showStatus("Error removing user: " + error.message, "error");
+                });
+        }
+        
+        // Knowledge level filter
+        // Add this to the existing knowledge slider event listener
+        knowledgeLevelFilter.addEventListener('input', function() {
+            // Update the text display (existing code)
+            knowledgeValueDisplay.textContent = `${this.value}%`;
+            
+            // Add this new line to update the fill effect
+            document.documentElement.style.setProperty('--slider-fill', `${this.value}%`);
+        });
+
+        // Initialize slider fill - add this after the knowledgeLevelFilter is defined
+        document.documentElement.style.setProperty('--slider-fill', `${knowledgeLevelFilter.value}%`);
+
+        // Modify the existing event listener for the slider
+        knowledgeLevelFilter.addEventListener('input', function() {
+            knowledgeValueDisplay.textContent = `${this.value}%`;
+            document.documentElement.style.setProperty('--slider-fill', `${this.value}%`);
+        });
 
         // Save word to Firebase
         saveButton.addEventListener('click', () => {
             if (!database) {
                 showStatus("Firebase is not connected. Please try again later.", "error");
+                return;
+            }
+            
+            // Check if a user is selected
+            if (!currentUserId) {
+                showStatus("Please select or add a user first.", "warning");
                 return;
             }
             
@@ -1090,7 +1817,8 @@
                 english: english,
                 article: article,
                 type: currentWordType,
-                timestamp: Date.now()
+                timestamp: Date.now(),
+                knowledge: {} // Will hold knowledge levels for each user
             };
             
             // Check for duplicates first
@@ -1102,6 +1830,11 @@
                     }
                     
                     try {
+                        // Initialize knowledge levels for all users
+                        users.forEach(user => {
+                            wordData.knowledge[user.id] = 0;
+                        });
+                        
                         // Save to Firebase if not a duplicate
                         database.ref('words').push(wordData)
                             .then(() => {
@@ -1233,6 +1966,7 @@
             correctCount = 0;
             incorrectCount = 0;
             currentWordIndex = 0;
+            failedWords = [];
             correctCountElement.textContent = "0";
             incorrectCountElement.textContent = "0";
             
@@ -1284,13 +2018,19 @@
             wordSelectContainer.innerHTML = '';
             
             allWords.forEach(word => {
+                // Get knowledge level for current user
+                const knowledgeLevel = word.knowledge && word.knowledge[currentUserId] !== undefined 
+                    ? word.knowledge[currentUserId] 
+                    : 0;
+                
                 const checkbox = document.createElement('label');
                 checkbox.className = `word-checkbox word-type-${word.type}`;
                 checkbox.dataset.wordType = word.type;
+                checkbox.dataset.knowledgeLevel = knowledgeLevel;
                 
                 const displayText = word.type === 'noun' ? 
-                    `${word.article} ${word.german} (${word.english})` : 
-                    `${word.german} (${word.english})`;
+                    `${word.article} ${word.german} (${word.english}) - ${knowledgeLevel}%` : 
+                    `${word.german} (${word.english}) - ${knowledgeLevel}%`;
                 
                 checkbox.innerHTML = `
                     <input type="checkbox" class="word-select-checkbox" value="${word.key}">
@@ -1329,22 +2069,39 @@
             const activeFilters = Array.from(document.querySelectorAll('.type-filter-checkbox:checked'))
                 .map(checkbox => checkbox.id.replace('filter-', ''));
             
+            // Get max knowledge level
+            const maxKnowledge = parseInt(knowledgeLevelFilter.value);
+            
             // Get all word checkboxes
-            const wordCheckboxes = document.querySelectorAll('.word-select-checkbox');
+            const wordCheckboxes = document.querySelectorAll('.word-checkbox');
             
             // Process each checkbox
             wordCheckboxes.forEach(checkbox => {
                 const wordRow = checkbox.closest('.word-checkbox');
                 const wordType = wordRow.dataset.wordType;
+                const knowledgeLevel = parseFloat(wordRow.dataset.knowledgeLevel);
+                const checkboxInput = checkbox.querySelector('.word-select-checkbox');
                 
-                // If this type is in active filters, check it, otherwise uncheck it
-                if (activeFilters.includes(wordType)) {
-                    checkbox.checked = true;
+                // If this type is in active filters and knowledge level is within range, check it
+                if (activeFilters.includes(wordType) && knowledgeLevel <= maxKnowledge) {
+                    checkboxInput.checked = true;
+                    wordRow.style.display = '';
+                } else if (activeFilters.length === 0 && knowledgeLevel <= maxKnowledge) {
+                    // If no type filter is active, just check knowledge level
+                    checkboxInput.checked = true;
+                    wordRow.style.display = '';
                 } else {
-                    checkbox.checked = false;
+                    checkboxInput.checked = false;
+                    // Hide rows that don't match criteria
+                    wordRow.style.display = 'none';
                 }
             });
         }
+        
+        // Event listener for knowledge level filter
+        knowledgeLevelFilter.addEventListener('change', function() {
+            updateTypeFilters();
+        });
         
         // Event listener for Start Practice button
         startPracticeButton.addEventListener('click', function() {
@@ -1361,8 +2118,21 @@
             
             // Determine which words to practice
             if (selectAllWords.checked) {
-                // Use all words
-                selectedWordIds = allWords.map(word => word.key);
+                // Filter by knowledge level
+                const maxKnowledge = parseInt(knowledgeLevelFilter.value);
+                const eligibleWords = allWords.filter(word => {
+                    const knowledgeLevel = word.knowledge && word.knowledge[currentUserId] !== undefined 
+                        ? word.knowledge[currentUserId] 
+                        : 0;
+                    return knowledgeLevel <= maxKnowledge;
+                });
+                
+                if (eligibleWords.length === 0) {
+                    showStatus("No words with knowledge level below " + maxKnowledge + "%", "warning");
+                    return;
+                }
+                
+                selectedWordIds = eligibleWords.map(word => word.key);
             } else {
                 // Use selected words
                 const checkboxes = document.querySelectorAll('.word-select-checkbox:checked');
@@ -1384,6 +2154,7 @@
             currentWordIndex = 0;
             correctCount = 0;
             incorrectCount = 0;
+            failedWords = [];
             correctCountElement.textContent = "0";
             incorrectCountElement.textContent = "0";
             totalWordsNum.textContent = practiceWords.length;
@@ -1424,6 +2195,7 @@
             if (!currentGameWord) return;
             
             let isCorrect = false;
+            let isPartiallyCorrect = false;
             
             if (currentLanguage === 'de') {
                 // User is translating from German to English
@@ -1434,8 +2206,11 @@
                 
                 if (isCorrect) {
                     showFeedback(true, `Correct! "${currentGameWord.english}" is the right translation.`);
+                    updateKnowledgeLevel(currentGameWord.key, true);
                 } else {
                     showFeedback(false, `Incorrect. The correct translation is "${currentGameWord.english}".`);
+                    updateKnowledgeLevel(currentGameWord.key, false);
+                    failedWords.push(currentGameWord);
                 }
             } else {
                 // User is translating from English to German
@@ -1445,14 +2220,23 @@
                 
                 if (currentGameWord.type === 'noun') {
                     // For nouns, check both the article and word
-                    isCorrect = userAnswer === correctAnswer && userArticle === currentGameWord.article;
+                    const isWordCorrect = userAnswer === correctAnswer;
+                    const isArticleCorrect = userArticle === currentGameWord.article;
+                    
+                    isCorrect = isWordCorrect && isArticleCorrect;
+                    isPartiallyCorrect = isWordCorrect && !isArticleCorrect;
                     
                     if (isCorrect) {
                         showFeedback(true, `Correct! "${currentGameWord.article} ${currentGameWord.german}" is the right translation.`);
-                    } else if (userAnswer === correctAnswer && userArticle !== currentGameWord.article) {
+                        updateKnowledgeLevel(currentGameWord.key, true);
+                    } else if (isPartiallyCorrect) {
                         showFeedback(false, `Almost! The word is correct, but the article should be "${currentGameWord.article}".`);
+                        updateKnowledgeLevel(currentGameWord.key, false, true);
+                        failedWords.push(currentGameWord);
                     } else {
                         showFeedback(false, `Incorrect. The correct translation is "${currentGameWord.article} ${currentGameWord.german}".`);
+                        updateKnowledgeLevel(currentGameWord.key, false);
+                        failedWords.push(currentGameWord);
                     }
                 } else {
                     // For other word types, just check the word
@@ -1460,8 +2244,11 @@
                     
                     if (isCorrect) {
                         showFeedback(true, `Correct! "${currentGameWord.german}" is the right translation.`);
+                        updateKnowledgeLevel(currentGameWord.key, true);
                     } else {
                         showFeedback(false, `Incorrect. The correct translation is "${currentGameWord.german}".`);
+                        updateKnowledgeLevel(currentGameWord.key, false);
+                        failedWords.push(currentGameWord);
                     }
                 }
             }
@@ -1511,6 +2298,13 @@
             const total = correctCount + incorrectCount;
             const accuracy = total > 0 ? Math.round((correctCount / total) * 100) : 0;
             summaryAccuracy.textContent = `${accuracy}%`;
+            
+            // Show/hide practice failed words button
+            if (failedWords.length > 0) {
+                practiceFailedButton.classList.remove('hidden');
+            } else {
+                practiceFailedButton.classList.add('hidden');
+            }
         }
         
         // Practice again button
@@ -1519,6 +2313,7 @@
             currentWordIndex = 0;
             correctCount = 0;
             incorrectCount = 0;
+            failedWords = [];
             correctCountElement.textContent = "0";
             incorrectCountElement.textContent = "0";
             
@@ -1527,6 +2322,36 @@
                 allWords.filter(word => selectedWordIds.includes(word.key)),
                 practiceWords.length
             );
+            
+            // Show practice area
+            practiceSummary.classList.add('hidden');
+            practiceArea.classList.remove('hidden');
+            
+            // Reset progress
+            progressBar.style.width = "0%";
+            
+            // Start practice
+            loadRandomWord();
+        });
+        
+        // Practice failed words button
+        practiceFailedButton.addEventListener('click', function() {
+            if (failedWords.length === 0) {
+                showStatus("No failed words to practice", "warning");
+                return;
+            }
+            
+            // Use failed words for practice
+            practiceWords = shuffleArray([...failedWords]);
+            failedWords = [];
+            
+            // Reset counters
+            currentWordIndex = 0;
+            correctCount = 0;
+            incorrectCount = 0;
+            correctCountElement.textContent = "0";
+            incorrectCountElement.textContent = "0";
+            totalWordsNum.textContent = practiceWords.length;
             
             // Show practice area
             practiceSummary.classList.add('hidden');
@@ -1550,23 +2375,16 @@
         document.getElementById('select-all').addEventListener('click', function() {
             const checkboxes = document.querySelectorAll('.word-select-checkbox');
             checkboxes.forEach(checkbox => {
-                checkbox.checked = true;
-            });
-            
-            // Uncheck type filters
-            document.querySelectorAll('.type-filter-checkbox').forEach(checkbox => {
-                checkbox.checked = false;
+                const row = checkbox.closest('.word-checkbox');
+                if (row.style.display !== 'none') {
+                    checkbox.checked = true;
+                }
             });
         });
         
         document.getElementById('deselect-all').addEventListener('click', function() {
             const checkboxes = document.querySelectorAll('.word-select-checkbox');
             checkboxes.forEach(checkbox => {
-                checkbox.checked = false;
-            });
-            
-            // Uncheck type filters
-            document.querySelectorAll('.type-filter-checkbox').forEach(checkbox => {
                 checkbox.checked = false;
             });
         });
@@ -1578,6 +2396,12 @@
                 return;
             }
             
+            // Check if user is selected
+            if (!currentUserId) {
+                showStatus("Please select or add a user first.", "warning");
+                return;
+            }
+            
             // Clear the current list
             wordList.innerHTML = '';
             
@@ -1586,7 +2410,7 @@
                     if (!snapshot.exists()) {
                         const noWordsRow = document.createElement('tr');
                         noWordsRow.className = 'no-results';
-                        noWordsRow.innerHTML = '<td colspan="4">No words found. Add some words first!</td>';
+                        noWordsRow.innerHTML = '<td colspan="5">No words found. Add some words first!</td>';
                         wordList.appendChild(noWordsRow);
                         return;
                     }
@@ -1618,7 +2442,23 @@
             row.dataset.key = word.key;
             row.className = `word-row word-type-${word.type}`;
             
-            const germanText = word.type === 'noun' ? `${word.article} ${word.german}` : word.german;
+            // Get knowledge level for current user
+            const knowledgeLevel = word.knowledge && word.knowledge[currentUserId] !== undefined 
+                ? word.knowledge[currentUserId] 
+                : 0;
+            
+            let germanText = '';
+            
+            if (word.type === 'noun') {
+                // Add colored square for article type
+                const articleClass = word.article === 'der' ? 'article-der' : 
+                                     word.article === 'die' ? 'article-die' : 
+                                     'article-das';
+                                     
+                germanText = `${word.article} ${word.german} <span class="article-square ${articleClass}"></span>`;
+            } else {
+                germanText = word.german;
+            }
             
             row.innerHTML = `
                 <td>
@@ -1628,21 +2468,34 @@
                 <td>${word.english}</td>
                 <td><span class="word-type-label">${word.type}</span></td>
                 <td>
+                    <div class="knowledge-level">
+                        <div class="knowledge-level-bar" style="width: ${knowledgeLevel}%"></div>
+                        <div class="knowledge-level-text">${knowledgeLevel}%</div>
+                    </div>
+                </td>
+                <td>
                     <button class="edit-btn">Edit</button>
                     <button class="delete-btn" title="Delete word">×</button>
                 </td>
             `;
             
             // Add event listeners
-            row.querySelector('.edit-btn').addEventListener('click', (e) => {
-                e.stopPropagation();
-                enterEditMode(row, word);
-            });
+            const editBtn = row.querySelector('.edit-btn');
+            const deleteBtn = row.querySelector('.delete-btn');
             
-            row.querySelector('.delete-btn').addEventListener('click', (e) => {
-                e.stopPropagation();
-                deleteWord(word.key);
-            });
+            if (editBtn) {
+                editBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    enterEditMode(row, word);
+                });
+            }
+            
+            if (deleteBtn) {
+                deleteBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    deleteWord(word.key);
+                });
+            }
             
             // Add click event to the entire row to edit
             row.addEventListener('click', () => {
@@ -1682,6 +2535,12 @@
                 </td>
                 <td>${word.type}</td>
                 <td>
+                    <div class="knowledge-level">
+                        <div class="knowledge-level-bar" style="width: ${word.knowledge && word.knowledge[currentUserId] !== undefined ? word.knowledge[currentUserId] : 0}%"></div>
+                        <div class="knowledge-level-text">${word.knowledge && word.knowledge[currentUserId] !== undefined ? word.knowledge[currentUserId] : 0}%</div>
+                    </div>
+                </td>
+                <td>
                     <div class="edit-actions">
                         <button class="save-btn">Save</button>
                         <button class="cancel-btn">Cancel</button>
@@ -1693,13 +2552,20 @@
             row.classList.add('edit-mode');
             
             // Add event listeners
-            row.querySelector('.save-btn').addEventListener('click', () => {
-                saveEdit(row, word);
-            });
+            const saveBtn = row.querySelector('.save-btn');
+            const cancelBtn = row.querySelector('.cancel-btn');
             
-            row.querySelector('.cancel-btn').addEventListener('click', () => {
-                cancelEdit(row);
-            });
+            if (saveBtn) {
+                saveBtn.addEventListener('click', () => {
+                    saveEdit(row, word);
+                });
+            }
+            
+            if (cancelBtn) {
+                cancelBtn.addEventListener('click', () => {
+                    cancelEdit(row);
+                });
+            }
             
             // Focus on the first input
             const firstInput = row.querySelector('input');
@@ -1714,6 +2580,11 @@
             const germanInput = row.querySelector('[data-field="german"]');
             const englishInput = row.querySelector('[data-field="english"]');
             const articleInput = row.querySelector('[data-field="article"]');
+            
+            if (!germanInput || !englishInput) {
+                showStatus("Error updating word: Could not find input fields", "error");
+                return;
+            }
             
             if (!germanInput.value.trim() || !englishInput.value.trim()) {
                 showStatus("German and English words cannot be empty!", "warning");
@@ -1752,12 +2623,30 @@
                     if (snapshot.exists()) {
                         const word = { key: key, ...snapshot.val() };
                         
-                        // Replace with a fresh row to ensure proper event listeners
+                        // Create a completely new row
                         const newRow = document.createElement('tr');
+                        if (!newRow) return; // Safety check
+                        
                         newRow.dataset.key = word.key;
                         newRow.className = `word-row word-type-${word.type}`;
                         
-                        const germanText = word.type === 'noun' ? `${word.article} ${word.german}` : word.german;
+                        // Get knowledge level for current user
+                        const knowledgeLevel = word.knowledge && word.knowledge[currentUserId] !== undefined 
+                            ? word.knowledge[currentUserId] 
+                            : 0;
+                        
+                        // Create German text with article square for nouns
+                        let germanText = '';
+                        if (word.type === 'noun') {
+                            // Add colored square for article type
+                            const articleClass = word.article === 'der' ? 'article-der' : 
+                                                word.article === 'die' ? 'article-die' : 
+                                                'article-das';
+                                                
+                            germanText = `${word.article} ${word.german} <span class="article-square ${articleClass}"></span>`;
+                        } else {
+                            germanText = word.german;
+                        }
                         
                         newRow.innerHTML = `
                             <td>
@@ -1767,30 +2656,55 @@
                             <td>${word.english}</td>
                             <td><span class="word-type-label">${word.type}</span></td>
                             <td>
+                                <div class="knowledge-level">
+                                    <div class="knowledge-level-bar" style="width: ${knowledgeLevel}%"></div>
+                                    <div class="knowledge-level-text">${knowledgeLevel}%</div>
+                                </div>
+                            </td>
+                            <td>
                                 <button class="edit-btn">Edit</button>
                                 <button class="delete-btn" title="Delete word">×</button>
                             </td>
                         `;
                         
-                        // Add event listeners
-                        newRow.querySelector('.edit-btn').addEventListener('click', (e) => {
+                        // Manually create and attach event listeners to avoid null reference errors
+                        const createSafeEventListener = (row, selector, eventType, handler) => {
+                            const element = row.querySelector(selector);
+                            if (element) {
+                                element.addEventListener(eventType, handler);
+                            }
+                        };
+                        
+                        // Safe way to add click event listeners
+                        createSafeEventListener(newRow, '.edit-btn', 'click', (e) => {
                             e.stopPropagation();
                             enterEditMode(newRow, word);
                         });
                         
-                        newRow.querySelector('.delete-btn').addEventListener('click', (e) => {
+                        createSafeEventListener(newRow, '.delete-btn', 'click', (e) => {
                             e.stopPropagation();
                             deleteWord(word.key);
                         });
                         
-                        // Add click event to the entire row to edit
+                        // Add click event to the entire row for editing
                         newRow.addEventListener('click', () => {
                             enterEditMode(newRow, word);
                         });
                         
                         // Replace the old row
-                        row.parentNode.replaceChild(newRow, row);
+                        if (row.parentNode) {
+                            row.parentNode.replaceChild(newRow, row);
+                        } else {
+                            // If parent node is somehow missing, reload the whole list
+                            loadWordList();
+                        }
                     }
+                })
+                .catch(error => {
+                    console.error("Error restoring row:", error);
+                    showStatus("Error restoring row: " + error.message, "error");
+                    // Fallback to reloading the entire list
+                    loadWordList();
                 });
         }
         
@@ -1832,7 +2746,7 @@
                 if (!noResultsRow) {
                     noResultsRow = document.createElement('tr');
                     noResultsRow.className = 'no-results';
-                    noResultsRow.innerHTML = `<td colspan="4">No words matching "${searchTerm}"</td>`;
+                    noResultsRow.innerHTML = `<td colspan="5">No words matching "${searchTerm}"</td>`;
                     wordList.appendChild(noResultsRow);
                 } else {
                     noResultsRow.querySelector('td').textContent = `No words matching "${searchTerm}"`;
@@ -1868,6 +2782,7 @@
         }
 
         // Add event listeners for Enter key in input fields
+        // Add event listeners for Enter key in input fields
         germanWord.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 englishWord.focus();
@@ -1893,6 +2808,13 @@
                 checkAnswerButton.click();
             } else if (e.key === 'Enter' && !nextWordButton.classList.contains('hidden')) {
                 nextWordButton.click();
+            }
+        });
+        
+        // Add event listener for Enter key in user form
+        newUserName.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                saveUserBtn.click();
             }
         });
     </script>
