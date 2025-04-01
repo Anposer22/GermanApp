@@ -90,7 +90,7 @@
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
-        
+
         .wider-container {
             max-width: 1000px; /* Increased from 800px to 1000px for more space */
         }
@@ -129,7 +129,7 @@
             display: flex;
             gap: 10px;
         }
-        
+
         .word-type-group {
             display: flex;
             gap: 10px;
@@ -271,13 +271,13 @@
             background-color: rgba(251, 188, 5, 0.1);
             color: #e6a700;
         }
-        
+
         /* Word list styling */
         .table-container {
             overflow-x: auto;
             margin-top: 20px;
         }
-        
+
         .search-input {
             width: 100%;
             padding: 12px 15px;
@@ -285,7 +285,7 @@
             border-radius: var(--border-radius);
             font-size: 1rem;
         }
-        
+
         .word-table {
             width: 100%;
             border-collapse: separate;
@@ -293,7 +293,7 @@
             margin-bottom: 20px;
             table-layout: fixed;
         }
-        
+
         .word-table th {
             padding: 12px 20px;
             text-align: left;
@@ -301,7 +301,7 @@
             font-weight: 600;
             border-bottom: 2px solid #eee;
         }
-        
+
         .word-table td {
             padding: 18px 20px;
             background-color: white;
@@ -309,7 +309,7 @@
             word-break: normal;
             overflow-wrap: break-word;
         }
-        
+
         /* Column widths */
         .word-table th:nth-child(1), .word-table td:nth-child(1) {
             width: 20%; /* Increased from 30% */
@@ -335,13 +335,13 @@
             width: 12%; /* Decreased slightly */
             text-align: center;
         }
-        
+
         /* Make Type, Knowledge, and Actions columns more compact */
-        .word-table th:nth-child(3), 
+        .word-table th:nth-child(3),
         .word-table td:nth-child(3),
-        .word-table th:nth-child(4), 
+        .word-table th:nth-child(4),
         .word-table td:nth-child(4),
-        .word-table th:nth-child(5), 
+        .word-table th:nth-child(5),
         .word-table td:nth-child(5) {
             padding-left: 0px;
             padding-right: 5px;
@@ -353,27 +353,27 @@
             border-radius: var(--border-radius);
             position: relative;
         }
-        
+
         .word-row {
             cursor: pointer;
         }
-        
+
         .word-row:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        
+
         .word-row td:first-child {
             border-top-left-radius: var(--border-radius);
             border-bottom-left-radius: var(--border-radius);
             padding-left: 30px; /* More space for color marker */
         }
-        
+
         .word-row td:last-child {
             border-top-right-radius: var(--border-radius);
             border-bottom-right-radius: var(--border-radius);
         }
-        
+
         /* Color indicators on left */
         .word-type-indicator {
             position: absolute;
@@ -384,27 +384,27 @@
             border-top-left-radius: var(--border-radius);
             border-bottom-left-radius: var(--border-radius);
         }
-        
+
         .word-type-noun .word-type-indicator {
             background-color: var(--primary);
             box-shadow: inset 0 0 10px rgba(66, 133, 244, 0.4);
         }
-        
+
         .word-type-verb .word-type-indicator {
             background-color: var(--secondary);
             box-shadow: inset 0 0 10px rgba(52, 168, 83, 0.4);
         }
-        
+
         .word-type-adjective .word-type-indicator {
             background-color: var(--danger);
             box-shadow: inset 0 0 10px rgba(234, 67, 53, 0.4);
         }
-        
+
         .word-type-other .word-type-indicator {
             background-color: var(--warning);
             box-shadow: inset 0 0 10px rgba(251, 188, 5, 0.4);
         }
-        
+
         /* 2. Enhanced Knowledge Level Progress Bar in Word List */
         .knowledge-level {
             display: flex;
@@ -444,7 +444,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .delete-btn {
             position: absolute;
             top: 50%;
@@ -466,12 +466,12 @@
             z-index: 5;
             transition: transform 0.2s ease, color 0.2s ease;
         }
-        
+
         .delete-btn:hover {
             transform: translateY(-50%) scale(1.2);
             color: #d32f2f;
         }
-        
+
         .edit-btn {
             position: absolute;
             left: 25px;
@@ -489,16 +489,16 @@
             opacity: 0;
             z-index: 4;
         }
-        
+
         .word-row:hover .edit-btn {
             opacity: 1;
         }
-        
+
         .edit-btn:hover {
             transform: translateY(-50%) translateY(-2px);
             box-shadow: 0 4px 10px rgba(66, 133, 244, 0.5);
         }
-        
+
         /* Category indicators */
         .word-type-label {
             font-size: 0.75rem;
@@ -509,51 +509,51 @@
             font-weight: 500;
             white-space: nowrap; /* Prevents wrapping */
         }
-        
+
         .word-type-noun .word-type-label {
             background-color: var(--primary);
         }
-        
+
         .word-type-verb .word-type-label {
             background-color: var(--secondary);
         }
-        
+
         .word-type-adjective .word-type-label {
             background-color: var(--danger);
         }
-        
+
         .word-type-other .word-type-label {
             background-color: var(--warning);
         }
-        
+
         /* Edit mode styling */
         .edit-mode td {
             padding: 20px 25px;
         }
-        
+
         .edit-mode input,
         .edit-mode select {
             padding: 10px;
             margin: 0;
             width: 100%;
         }
-        
+
         .edit-mode .edit-german {
             min-width: 120px; /* Ensure minimum width for German word input */
         }
-        
+
         .edit-mode .article-select {
             position: relative;            /* Enable independent positioning */
             width: 70px;
             right: 10px;
         }
-        
+
         .edit-actions {
             display: flex;
             gap: 15px;
             justify-content: center;
         }
-        
+
         .save-btn, .cancel-btn {
             padding: 8px 18px;
             border-radius: var(--border-radius);
@@ -564,22 +564,22 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             min-width: 80px;
         }
-        
+
         .save-btn {
             background-color: var(--primary);
             color: white;
         }
-        
+
         .cancel-btn {
             background-color: var(--gray);
             color: white;
         }
-        
+
         .save-btn:hover, .cancel-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-        
+
         .no-results td {
             text-align: center;
             padding: 20px;
@@ -592,17 +592,17 @@
         .practice-config {
             padding-bottom: 20px;
         }
-        
+
         .progress-bar-container {
             margin-bottom: 20px;
         }
-        
+
         .progress-text {
             text-align: center;
             margin-bottom: 5px;
             color: var(--gray);
         }
-        
+
         .progress-bar-bg {
             width: 100%;
             height: 8px;
@@ -610,7 +610,7 @@
             border-radius: 4px;
             overflow: hidden;
         }
-        
+
         .progress-bar {
             height: 100%;
             width: 0%;
@@ -618,7 +618,7 @@
             transition: width 0.3s ease;
         }
 
-        
+
         /* 1. Enhanced Knowledge Level Threshold Bar in Practice Tab */
         .knowledge-slider {
             -webkit-appearance: none;
@@ -710,12 +710,12 @@
             font-size: 0.8rem;
             color: var(--gray);
         }
-        
+
         .number-input {
             width: 80px;
             padding: 10px;
         }
-        
+
         /* Custom checkbox styles */
         .custom-checkbox {
             display: flex;
@@ -723,18 +723,18 @@
             cursor: pointer;
             margin-bottom: 10px;
         }
-        
+
         .custom-checkbox input[type="checkbox"] {
             width: 20px;
             height: 20px;
             margin-right: 10px;
             cursor: pointer;
         }
-        
+
         .checkbox-label {
             font-size: 1.1rem;
         }
-        
+
         /* Improved word selection container */
         .word-select-container {
             max-height: 300px;
@@ -747,7 +747,7 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 8px;
         }
-        
+
         .word-checkbox {
             display: flex;
             align-items: center;
@@ -756,47 +756,47 @@
             border-radius: 4px;
             transition: background-color 0.2s ease;
         }
-        
+
         .word-checkbox:hover {
             background-color: #f0f7ff;
         }
-        
+
         .word-checkbox input[type="checkbox"] {
             width: 18px;
             height: 18px;
             margin-right: 8px;
             cursor: pointer;
         }
-        
+
         .word-checkbox-label {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        
+
         /* Category colors for word types */
         .word-type-noun {
             border-left: 3px solid var(--primary);
         }
-        
+
         .word-type-verb {
             border-left: 3px solid var(--secondary);
         }
-        
+
         .word-type-adjective {
             border-left: 3px solid var(--danger);
         }
-        
+
         .word-type-other {
             border-left: 3px solid var(--warning);
         }
-        
+
         .word-selection-actions {
             display: flex;
             gap: 10px;
             margin-top: 10px;
         }
-        
+
         .word-selection-actions .btn-small {
             padding: 8px 15px;
             border-radius: var(--border-radius);
@@ -806,32 +806,32 @@
             color: white;
             font-weight: 500;
         }
-        
+
         .practice-summary {
             text-align: center;
             padding: 20px 0;
         }
-        
+
         .summary-stats {
             display: flex;
             justify-content: space-around;
             margin: 30px 0;
         }
-        
+
         .summary-stat {
             text-align: center;
         }
-        
+
         .stat-value {
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 5px;
         }
-        
+
         .stat-label {
             color: var(--gray);
         }
-        
+
         /* Type filter styling */
         .type-filter {
             display: flex;
@@ -839,7 +839,36 @@
             margin: 10px 0;
             flex-wrap: wrap;
         }
-        
+
+        /* Direction filter styling */
+        .direction-filter {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 10px 0;
+        }
+
+        .direction-option {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: var(--border-radius);
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .direction-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .direction-option input {
+            margin-right: 10px;
+            width: auto;
+        }
+
         .type-filter-option {
             display: flex;
             align-items: center;
@@ -850,29 +879,29 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
-        
+
         .type-filter-option:hover {
             transform: translateY(-2px);
             box-shadow: 0 2px 5px rgba(0,0,0,0.15);
         }
-        
+
         .type-filter-option input {
             margin-right: 5px;
             width: auto;
         }
-        
+
         .type-filter-noun {
             border-left: 3px solid var(--primary);
         }
-        
+
         .type-filter-verb {
             border-left: 3px solid var(--secondary);
         }
-        
+
         .type-filter-adjective {
             border-left: 3px solid var(--danger);
         }
-        
+
         .type-filter-other {
             border-left: 3px solid var(--warning);
         }
@@ -889,18 +918,18 @@
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
-        
+
         .user-select {
             width: auto;
             min-width: 150px;
             padding: 8px 12px;
         }
-        
+
         .user-actions {
             display: flex;
             gap: 10px;
         }
-        
+
         .user-btn {
             padding: 8px 12px;
             border: none;
@@ -910,17 +939,17 @@
             background-color: var(--primary);
             color: white;
         }
-        
+
         .user-btn.danger {
             background-color: var(--danger);
         }
-        
+
         .user-form {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        
+
         /* Dialog for confirmation */
         .confirm-dialog {
             position: fixed;
@@ -934,11 +963,11 @@
             justify-content: center;
             z-index: 1000;
         }
-        
+
         .confirm-dialog.active {
             display: flex;
         }
-        
+
         .confirm-dialog-content {
             background-color: white;
             padding: 20px;
@@ -947,25 +976,25 @@
             max-width: 400px;
             width: 90%;
         }
-        
+
         .confirm-dialog-title {
             font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 15px;
             color: var(--dark);
         }
-        
+
         .confirm-dialog-message {
             margin-bottom: 20px;
             color: var(--gray);
         }
-        
+
         .confirm-dialog-actions {
             display: flex;
             justify-content: flex-end;
             gap: 10px;
         }
-        
+
         /* Article color square */
         .article-square {
             display: inline-block;
@@ -976,15 +1005,15 @@
             vertical-align: middle;
             border: 1px solid rgba(0,0,0,0.1);
         }
-        
+
         .article-der {
             background-color: #4285f4; /* Blue for der */
         }
-        
+
         .article-die {
             background-color: #ff00ff; /* Pink for die */
         }
-        
+
         .article-das {
             background-color: #00cc00; /* Green for das */
         }
@@ -993,21 +1022,21 @@
             h1 {
                 font-size: 2rem;
             }
-            
+
             .container {
                 padding: 20px;
             }
-            
+
             .user-management {
                 flex-direction: column;
                 padding: 15px;
             }
-            
+
             .user-form {
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
+
             .confirm-dialog-content {
                 width: 95%;
                 padding: 15px;
@@ -1019,7 +1048,7 @@
     <header>
         <h1>Vokabel Trainer</h1>
         <p class="subtitle">Learn German and English vocabulary</p>
-        
+
         <!-- User Management Section -->
         <div class="user-management">
             <div class="user-select-container">
@@ -1038,7 +1067,7 @@
                 <button id="cancel-user-btn" class="user-btn">Cancel</button>
             </div>
         </div>
-        
+
         <!-- Confirmation Dialog -->
         <div id="confirm-dialog" class="confirm-dialog">
             <div class="confirm-dialog-content">
@@ -1050,7 +1079,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="mode-toggle">
             <button class="mode-btn active" data-mode="input">Add Words</button>
             <button class="mode-btn" data-mode="game">Practice</button>
@@ -1086,9 +1115,9 @@
         </div>
 
         <button class="btn btn-primary" id="save-word">Save Word</button>
-        
+
         <div id="save-message" class="message hidden">Word saved successfully!</div>
-        
+
         <div class="word-count">
             Total words: <span id="word-count">0</span>
         </div>
@@ -1123,12 +1152,12 @@
     <div class="container wider-container hidden" id="game-container">
         <div id="practice-config" class="practice-config">
             <h3>Practice Settings</h3>
-            
+
             <div class="form-group">
                 <label for="word-count-select">Number of words to practice:</label>
                 <input type="number" id="word-count-select" min="1" value="10" class="number-input">
             </div>
-            
+
             <div class="form-group">
                 <label>Filter by word type:</label>
                 <div class="type-filter">
@@ -1146,7 +1175,7 @@
                     </label>
                 </div>
             </div>
-            
+
             <!-- Knowledge Level Filter -->
             <div class="form-group">
                 <label>Maximum knowledge level to practice: <span id="knowledge-value" class="knowledge-value">100%</span></label>
@@ -1154,14 +1183,28 @@
                     <input type="range" id="knowledge-level-filter" class="knowledge-slider" min="0" max="100" value="100" step="5">
                 </div>
             </div>
-            
+            <!-- Practice Direction Filter -->
+            <div class="form-group">
+                <label>Practice direction:</label>
+                <div class="direction-filter">
+                    <label class="direction-option">
+                        <input type="radio" name="practice-direction" value="de_to_en" checked> German to English
+                    </label>
+                    <label class="direction-option">
+                        <input type="radio" name="practice-direction" value="en_to_de"> English to German
+                    </label>
+                    <label class="direction-option">
+                        <input type="radio" name="practice-direction" value="random"> Random
+                    </label>
+                </div>
+            </div>
             <div class="form-group">
                 <label class="custom-checkbox">
-                    <input type="checkbox" id="select-all-words" checked> 
+                    <input type="checkbox" id="select-all-words" checked>
                     <span class="checkbox-label">Practice with all words</span>
                 </label>
             </div>
-            
+
             <div class="form-group word-selection hidden">
                 <label>Select specific words to practice:</label>
                 <div class="word-select-container" id="word-select-container">
@@ -1172,10 +1215,10 @@
                     <button type="button" class="btn-small" id="deselect-all">Deselect All</button>
                 </div>
             </div>
-            
+
             <button class="btn btn-primary" id="start-practice">Start Practice</button>
         </div>
-        
+
         <div id="practice-area" class="hidden">
             <div class="progress-bar-container">
                 <div class="progress-text">Word <span id="current-word-num">1</span> of <span id="total-words-num">10</span></div>
@@ -1183,7 +1226,7 @@
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
             </div>
-            
+
             <div class="game-word">
                 <span class="lang-tag" id="question-lang-tag"></span>
                 <span id="question-word"></span>
@@ -1216,7 +1259,7 @@
                 <p>Correct: <span id="correct-count">0</span> | Incorrect: <span id="incorrect-count">0</span></p>
             </div>
         </div>
-        
+
         <div id="practice-summary" class="practice-summary hidden">
             <h3>Practice Summary</h3>
             <div class="summary-stats">
@@ -1233,7 +1276,7 @@
                     <div class="stat-label">Accuracy</div>
                 </div>
             </div>
-            
+
             <button class="btn btn-primary" id="practice-again">Practice Again</button>
             <button class="btn btn-secondary" id="practice-failed">Practice Failed Words</button>
             <button class="btn btn-secondary" id="change-settings">Change Settings</button>
@@ -1268,7 +1311,7 @@
         const statusBar = document.getElementById('status-bar');
         const wordList = document.getElementById('word-list');
         const searchWords = document.getElementById('search-words');
-        
+
         const questionWord = document.getElementById('question-word');
         const questionLangTag = document.getElementById('question-lang-tag');
         const answerContainerDe = document.getElementById('answer-container-de');
@@ -1281,7 +1324,7 @@
         const feedbackElement = document.getElementById('feedback');
         const correctCountElement = document.getElementById('correct-count');
         const incorrectCountElement = document.getElementById('incorrect-count');
-        
+
         // User management elements
         const userSelect = document.getElementById('user-select');
         const addUserBtn = document.getElementById('add-user-btn');
@@ -1291,16 +1334,16 @@
         const newUserName = document.getElementById('new-user-name');
         const saveUserBtn = document.getElementById('save-user-btn');
         const cancelUserBtn = document.getElementById('cancel-user-btn');
-        
+
         // Confirmation dialog elements
         const confirmDialog = document.getElementById('confirm-dialog');
         const confirmCancelBtn = document.getElementById('confirm-cancel-btn');
         const confirmDeleteBtn = document.getElementById('confirm-delete-btn');
-        
+
         // Knowledge level elements
         const knowledgeLevelFilter = document.getElementById('knowledge-level-filter');
         const knowledgeValueDisplay = document.getElementById('knowledge-value');
-        
+
         // Practice configuration elements
         const practiceConfig = document.getElementById('practice-config');
         const practiceArea = document.getElementById('practice-area');
@@ -1324,6 +1367,7 @@
         let currentWordType = 'noun';
         let currentGameWord = null;
         let currentLanguage = null;
+        let practiceDirection = 'de_to_en'; // Default: German to English
         let correctCount = 0;
         let incorrectCount = 0;
         let allWords = [];
@@ -1334,7 +1378,7 @@
         let currentUserId = null;
         let users = [];
         let userKnowledgeLevels = {};
-        
+
         // Knowledge level related constants
         const KNOWLEDGE_INCREMENT = 10; // +10% for correct answers
         const KNOWLEDGE_DECREMENT = 5;  // -5% for incorrect answers
@@ -1347,7 +1391,7 @@
             firebase.initializeApp(firebaseConfig);
             database = firebase.database();
             console.log("Firebase initialized successfully");
-            
+
             // Test database connection
             database.ref('.info/connected').on('value', function(snapshot) {
                 if (snapshot.val() === true) {
@@ -1362,7 +1406,7 @@
             console.error("Firebase initialization error:", error);
             showStatus("Firebase error: " + error.message, "error");
         }
-        
+
         // DOM content loaded event
         document.addEventListener('DOMContentLoaded', function() {
             // Make sure remove button state is correct
@@ -1380,36 +1424,36 @@
             statusBar.className = 'status-bar';
             statusBar.classList.add('status-' + type);
             statusBar.classList.remove('hidden');
-            
+
             if (duration > 0) {
                 setTimeout(() => {
                     statusBar.classList.add('hidden');
                 }, duration);
             }
         }
-        
+
         // User Management Functions
         function loadUsers() {
             if (!database) {
                 showStatus("Firebase is not connected. Please try again later.", "error");
                 return;
             }
-            
+
             database.ref('users').once('value')
                 .then(snapshot => {
                     // Clear current options except the default
                     while (userSelect.options.length > 1) {
                         userSelect.remove(1);
                     }
-                    
+
                     if (!snapshot.exists()) {
                         // No users yet, keep the default option only
                         return;
                     }
-                    
+
                     const userData = snapshot.val();
                     users = [];
-                    
+
                     // Create options for each user
                     for (const userId in userData) {
                         const user = userData[userId];
@@ -1417,13 +1461,13 @@
                             id: userId,
                             name: user.name
                         });
-                        
+
                         const option = document.createElement('option');
                         option.value = userId;
                         option.textContent = user.name;
                         userSelect.appendChild(option);
                     }
-                    
+
                     // If there was a selected user before, select them again
                     if (currentUserId && users.some(user => user.id === currentUserId)) {
                         userSelect.value = currentUserId;
@@ -1432,12 +1476,12 @@
                         userSelect.value = users[0].id;
                         currentUserId = users[0].id;
                     }
-                    
+
                     // Enable/disable remove button based on selection
                     if (removeUserBtn) {
                         removeUserBtn.disabled = !currentUserId;
                     }
-                    
+
                     // Load word knowledge for the selected user
                     if (currentUserId) {
                         loadUserKnowledge();
@@ -1448,42 +1492,42 @@
                     showStatus("Error loading users: " + error.message, "error");
                 });
         }
-        
+
         // Add a new user
         function addNewUser(name) {
             if (!name.trim()) {
                 showStatus("Please enter a valid name.", "warning");
                 return;
             }
-            
+
             if (!database) {
                 showStatus("Firebase is not connected. Please try again later.", "error");
                 return;
             }
-            
+
             // Create new user in database
             const newUserRef = database.ref('users').push();
-            
+
             newUserRef.set({
                 name: name.trim(),
                 createdAt: Date.now()
             })
             .then(() => {
                 const userId = newUserRef.key;
-                
+
                 // Initialize knowledge levels for all existing words
                 initializeWordsForNewUser(userId)
                     .then(() => {
                         showStatus(`User "${name}" added successfully!`, "success", 3000);
-                        
+
                         // Reload users list
                         loadUsers();
-                        
+
                         // Reset the form
                         newUserName.value = '';
                         addUserForm.classList.add('hidden');
                         addUserBtnContainer.classList.remove('hidden');
-                        
+
                         // Set as current user
                         currentUserId = userId;
                     })
@@ -1497,7 +1541,7 @@
                 showStatus("Error adding user: " + error.message, "error");
             });
         }
-        
+
         // Initialize knowledge levels for a new user
         function initializeWordsForNewUser(userId) {
             return new Promise((resolve, reject) => {
@@ -1505,7 +1549,7 @@
                     reject(new Error("Firebase is not connected"));
                     return;
                 }
-                
+
                 database.ref('words').once('value')
                     .then(snapshot => {
                         if (!snapshot.exists()) {
@@ -1513,15 +1557,15 @@
                             resolve();
                             return;
                         }
-                        
+
                         const words = snapshot.val();
                         const updates = {};
-                        
+
                         // For each word, add knowledge level for the new user
                         for (const wordId in words) {
                             updates[`words/${wordId}/knowledge/${userId}`] = 0;
                         }
-                        
+
                         // Update all words at once
                         database.ref().update(updates)
                             .then(() => {
@@ -1536,22 +1580,22 @@
                     });
             });
         }
-        
+
         // Load knowledge levels for the current user
         function loadUserKnowledge() {
             if (!currentUserId || !database) {
                 return;
             }
-            
+
             database.ref('words').once('value')
                 .then(snapshot => {
                     if (!snapshot.exists()) {
                         return;
                     }
-                    
+
                     const words = snapshot.val();
                     userKnowledgeLevels = {};
-                    
+
                     // Extract knowledge levels for the current user
                     for (const wordId in words) {
                         const word = words[wordId];
@@ -1567,7 +1611,7 @@
                                 });
                         }
                     }
-                    
+
                     // If in list mode, refresh the word list
                     if (!listContainer.classList.contains('hidden')) {
                         loadWordList();
@@ -1577,16 +1621,16 @@
                     console.error("Error loading user knowledge:", error);
                 });
         }
-        
+
         // Update knowledge level for a word
         function updateKnowledgeLevel(wordId, isCorrect, isPartiallyCorrect = false) {
             if (!currentUserId || !database) {
                 return;
             }
-            
+
             // Get current knowledge level
             let currentLevel = userKnowledgeLevels[wordId] || 0;
-            
+
             // Calculate new level
             let newLevel;
             if (isCorrect) {
@@ -1596,16 +1640,16 @@
             } else {
                 newLevel = Math.max(0, currentLevel - KNOWLEDGE_DECREMENT);
             }
-            
+
             // Update in local state
             userKnowledgeLevels[wordId] = newLevel;
-            
+
             // Update in database
             database.ref(`words/${wordId}/knowledge/${currentUserId}`).set(newLevel)
                 .catch(error => {
                     console.error("Error updating knowledge level:", error);
                 });
-                
+
             return newLevel;
         }
 
@@ -1613,16 +1657,16 @@
         modeButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const mode = button.dataset.mode;
-                
+
                 // Update active button
                 modeButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-                
+
                 // Hide all containers first
                 inputContainer.classList.add('hidden');
                 gameContainer.classList.add('hidden');
                 listContainer.classList.add('hidden');
-                
+
                 // Show appropriate container
                 if (mode === 'input') {
                     inputContainer.classList.remove('hidden');
@@ -1632,7 +1676,7 @@
                         showStatus("Please select or add a user first.", "warning");
                         return;
                     }
-                    
+
                     gameContainer.classList.remove('hidden');
                     initializePractice();
                 } else if (mode === 'list') {
@@ -1647,11 +1691,11 @@
             button.addEventListener('click', () => {
                 const type = button.dataset.type;
                 currentWordType = type;
-                
+
                 // Update active button
                 wordTypeButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-                
+
                 // Show/hide article field based on type
                 if (type === 'noun') {
                     articleSelect.parentElement.classList.remove('hidden');
@@ -1662,7 +1706,7 @@
                 }
             });
         });
-        
+
         // User management event listeners
         userSelect.addEventListener('change', function() {
             const userId = this.value;
@@ -1670,69 +1714,69 @@
                 currentUserId = userId;
                 loadUserKnowledge();
                 showStatus(`Switched to user: ${this.options[this.selectedIndex].text}`, "success", 3000);
-                
+
                 // Enable remove user button if a user is selected
                 removeUserBtn.disabled = false;
             } else {
                 currentUserId = null;
                 userKnowledgeLevels = {};
                 showStatus("No user selected", "warning");
-                
+
                 // Disable remove user button if no user is selected
                 removeUserBtn.disabled = true;
             }
         });
-        
+
         addUserBtn.addEventListener('click', function() {
             // Show the add user form
             addUserBtnContainer.classList.add('hidden');
             addUserForm.classList.remove('hidden');
             newUserName.focus();
         });
-        
+
         saveUserBtn.addEventListener('click', function() {
             addNewUser(newUserName.value);
         });
-        
+
         cancelUserBtn.addEventListener('click', function() {
             // Hide the form, show the button
             addUserForm.classList.add('hidden');
             addUserBtnContainer.classList.remove('hidden');
             newUserName.value = '';
         });
-        
+
         // Remove user functionality
         removeUserBtn.addEventListener('click', function() {
             if (!currentUserId) {
                 showStatus("Please select a user first", "warning");
                 return;
             }
-            
+
             // Show confirmation dialog
             confirmDialog.classList.add('active');
         });
-        
+
         confirmCancelBtn.addEventListener('click', function() {
             // Hide dialog without taking action
             confirmDialog.classList.remove('active');
         });
-        
+
         confirmDeleteBtn.addEventListener('click', function() {
             // Proceed with user removal
             removeUser(currentUserId);
             confirmDialog.classList.remove('active');
         });
-        
+
         // Function to remove a user
         function removeUser(userId) {
             if (!database || !userId) {
                 showStatus("Cannot remove user", "error");
                 return;
             }
-            
+
             // Get user name for the status message
             const userName = userSelect.options[userSelect.selectedIndex].text;
-            
+
             // Remove user from database
             database.ref('users/' + userId).remove()
                 .then(() => {
@@ -1743,25 +1787,25 @@
                     if (snapshot.exists()) {
                         const words = snapshot.val();
                         const updates = {};
-                        
+
                         // For each word, remove knowledge level for this user
                         for (const wordId in words) {
                             if (words[wordId].knowledge && words[wordId].knowledge[userId]) {
                                 updates[`words/${wordId}/knowledge/${userId}`] = null;
                             }
                         }
-                        
+
                         // Update all words at once
                         return database.ref().update(updates);
                     }
                 })
                 .then(() => {
                     showStatus(`User "${userName}" removed successfully!`, "success", 3000);
-                    
+
                     // Reset current user if it was the one removed
                     currentUserId = null;
                     userKnowledgeLevels = {};
-                    
+
                     // Reload users list
                     loadUsers();
                 })
@@ -1770,13 +1814,13 @@
                     showStatus("Error removing user: " + error.message, "error");
                 });
         }
-        
+
         // Knowledge level filter
         // Add this to the existing knowledge slider event listener
         knowledgeLevelFilter.addEventListener('input', function() {
             // Update the text display (existing code)
             knowledgeValueDisplay.textContent = `${this.value}%`;
-            
+
             // Add this new line to update the fill effect
             document.documentElement.style.setProperty('--slider-fill', `${this.value}%`);
         });
@@ -1796,21 +1840,21 @@
                 showStatus("Firebase is not connected. Please try again later.", "error");
                 return;
             }
-            
+
             // Check if a user is selected
             if (!currentUserId) {
                 showStatus("Please select or add a user first.", "warning");
                 return;
             }
-            
+
             const german = germanWord.value.trim();
             const english = englishWord.value.trim();
-            
+
             if (!german || !english) {
                 showStatus("Please enter both German and English words.", "warning");
                 return;
             }
-            
+
             const article = currentWordType === 'noun' ? articleSelect.value : '';
             const wordData = {
                 german: german,
@@ -1820,7 +1864,7 @@
                 timestamp: Date.now(),
                 knowledge: {} // Will hold knowledge levels for each user
             };
-            
+
             // Check for duplicates first
             checkForDuplicates(german, english)
                 .then(isDuplicate => {
@@ -1828,29 +1872,29 @@
                         showStatus("This word already exists in your vocabulary list!", "warning");
                         return;
                     }
-                    
+
                     try {
                         // Initialize knowledge levels for all users
                         users.forEach(user => {
                             wordData.knowledge[user.id] = 0;
                         });
-                        
+
                         // Save to Firebase if not a duplicate
                         database.ref('words').push(wordData)
                             .then(() => {
                                 // Clear form
                                 germanWord.value = '';
                                 englishWord.value = '';
-                                
+
                                 // Show success message
                                 saveMessage.classList.remove('hidden');
                                 setTimeout(() => {
                                     saveMessage.classList.add('hidden');
                                 }, 3000);
-                                
+
                                 // Update word count
                                 updateWordCount();
-                                
+
                                 showStatus("Word saved successfully!", "success", 3000);
                             })
                             .catch(error => {
@@ -1867,7 +1911,7 @@
                     showStatus("Error checking for duplicates: " + error.message, "error");
                 });
         });
-        
+
         // Check if a word already exists in the database
         function checkForDuplicates(german, english) {
             return new Promise((resolve, reject) => {
@@ -1875,28 +1919,28 @@
                     resolve(false);
                     return;
                 }
-                
+
                 database.ref('words').once('value')
                     .then(snapshot => {
                         if (!snapshot.exists()) {
                             resolve(false);
                             return;
                         }
-                        
+
                         const words = snapshot.val();
                         const germanLower = german.toLowerCase();
                         const englishLower = english.toLowerCase();
-                        
+
                         // Check if any existing word matches the German or English input
                         for (const key in words) {
                             const word = words[key];
-                            if (word.german.toLowerCase() === germanLower || 
+                            if (word.german.toLowerCase() === germanLower ||
                                 word.english.toLowerCase() === englishLower) {
                                 resolve(true);
                                 return;
                             }
                         }
-                        
+
                         resolve(false);
                     })
                     .catch(error => {
@@ -1913,7 +1957,7 @@
                 showPracticeSummary();
                 return;
             }
-            
+
             // Reset UI
             answerWordEn.value = '';
             answerWordDe.value = '';
@@ -1921,27 +1965,36 @@
             feedbackElement.style.display = 'none';
             checkAnswerButton.classList.remove('hidden');
             nextWordButton.classList.add('hidden');
-            
+
             // Update progress
             currentWordNum.textContent = currentWordIndex + 1;
             progressBar.style.width = `${((currentWordIndex) / practiceWords.length) * 100}%`;
-            
+
             // Get the current word
             currentGameWord = practiceWords[currentWordIndex];
-            
-            // Randomly choose language
-            currentLanguage = Math.random() < 0.5 ? 'de' : 'en';
-            
+
+            // Set language based on selected practice direction
+            if (practiceDirection === 'de_to_en') {
+                // German to English - show German, ask for English
+                currentLanguage = 'de';
+            } else if (practiceDirection === 'en_to_de') {
+                // English to German - show English, ask for German
+                currentLanguage = 'en';
+            } else {
+                // Random - 50/50 chance
+                currentLanguage = Math.random() < 0.5 ? 'de' : 'en';
+            }
+
             // Display the word
             if (currentLanguage === 'de') {
-                const displayWord = currentGameWord.type === 'noun' 
+                const displayWord = currentGameWord.type === 'noun'
                     ? `${currentGameWord.article} ${currentGameWord.german}`
                     : currentGameWord.german;
-                    
+
                 questionWord.textContent = displayWord;
                 questionLangTag.textContent = 'DE';
                 questionLangTag.className = 'lang-tag de';
-                
+
                 // Show English answer field
                 answerContainerDe.classList.remove('hidden');
                 answerContainerEn.classList.add('hidden');
@@ -1949,19 +2002,19 @@
                 questionWord.textContent = currentGameWord.english;
                 questionLangTag.textContent = 'EN';
                 questionLangTag.className = 'lang-tag en';
-                
+
                 // Show German answer field
                 answerContainerDe.classList.add('hidden');
                 answerContainerEn.classList.remove('hidden');
             }
         }
-        
+
         // Practice configuration
         function initializePractice() {
             practiceConfig.classList.remove('hidden');
             practiceArea.classList.add('hidden');
             practiceSummary.classList.add('hidden');
-            
+
             // Reset counters
             correctCount = 0;
             incorrectCount = 0;
@@ -1969,42 +2022,42 @@
             failedWords = [];
             correctCountElement.textContent = "0";
             incorrectCountElement.textContent = "0";
-            
+
             // Load words for selection
             loadWordSelections();
         }
-        
+
         function loadWordSelections() {
             if (!database) {
                 showStatus("Firebase is not connected. Please try again later.", "error");
                 return;
             }
-            
+
             database.ref('words').once('value')
                 .then(snapshot => {
                     if (!snapshot.exists()) {
                         showStatus("No words found. Add some words first!", "warning");
                         return;
                     }
-                    
+
                     const words = snapshot.val();
-                    
+
                     // Create an array of word objects with their keys
                     allWords = Object.keys(words).map(key => ({
                         key: key,
                         ...words[key]
                     }));
-                    
+
                     // Sort alphabetically
                     allWords.sort((a, b) => a.german.localeCompare(b.german));
-                    
+
                     // Update word count input max
                     wordCountSelect.max = allWords.length;
                     wordCountSelect.value = Math.min(10, allWords.length);
-                    
+
                     // Populate word selection checkboxes
                     populateWordSelection();
-                    
+
                     // Set total words number
                     totalWordsNum.textContent = wordCountSelect.value;
                 })
@@ -2013,34 +2066,34 @@
                     showStatus("Error loading words: " + error.message, "error");
                 });
         }
-        
+
         function populateWordSelection() {
             wordSelectContainer.innerHTML = '';
-            
+
             allWords.forEach(word => {
                 // Get knowledge level for current user
-                const knowledgeLevel = word.knowledge && word.knowledge[currentUserId] !== undefined 
-                    ? word.knowledge[currentUserId] 
+                const knowledgeLevel = word.knowledge && word.knowledge[currentUserId] !== undefined
+                    ? word.knowledge[currentUserId]
                     : 0;
-                
+
                 const checkbox = document.createElement('label');
                 checkbox.className = `word-checkbox word-type-${word.type}`;
                 checkbox.dataset.wordType = word.type;
                 checkbox.dataset.knowledgeLevel = knowledgeLevel;
-                
-                const displayText = word.type === 'noun' ? 
-                    `${word.article} ${word.german} (${word.english}) - ${knowledgeLevel}%` : 
+
+                const displayText = word.type === 'noun' ?
+                    `${word.article} ${word.german} (${word.english}) - ${knowledgeLevel}%` :
                     `${word.german} (${word.english}) - ${knowledgeLevel}%`;
-                
+
                 checkbox.innerHTML = `
                     <input type="checkbox" class="word-select-checkbox" value="${word.key}">
                     <span class="word-checkbox-label">${displayText}</span>
                 `;
-                
+
                 wordSelectContainer.appendChild(checkbox);
             });
         }
-        
+
         // Event listener for "Select All Words" checkbox
         selectAllWords.addEventListener('change', function() {
             if (this.checked) {
@@ -2049,7 +2102,7 @@
                 wordSelectionDiv.classList.remove('hidden');
             }
         });
-        
+
         // Event listeners for word type filters
         document.querySelectorAll('.type-filter-checkbox').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
@@ -2058,30 +2111,30 @@
                     selectAllWords.checked = false;
                     wordSelectionDiv.classList.remove('hidden');
                 }
-                
+
                 updateTypeFilters();
             });
         });
-        
+
         // Update word selections based on type filters
         function updateTypeFilters() {
             // Get all checked filter types
             const activeFilters = Array.from(document.querySelectorAll('.type-filter-checkbox:checked'))
                 .map(checkbox => checkbox.id.replace('filter-', ''));
-            
+
             // Get max knowledge level
             const maxKnowledge = parseInt(knowledgeLevelFilter.value);
-            
+
             // Get all word checkboxes
             const wordCheckboxes = document.querySelectorAll('.word-checkbox');
-            
+
             // Process each checkbox
             wordCheckboxes.forEach(checkbox => {
                 const wordRow = checkbox.closest('.word-checkbox');
                 const wordType = wordRow.dataset.wordType;
                 const knowledgeLevel = parseFloat(wordRow.dataset.knowledgeLevel);
                 const checkboxInput = checkbox.querySelector('.word-select-checkbox');
-                
+
                 // If this type is in active filters and knowledge level is within range, check it
                 if (activeFilters.includes(wordType) && knowledgeLevel <= maxKnowledge) {
                     checkboxInput.checked = true;
@@ -2097,41 +2150,48 @@
                 }
             });
         }
-        
+
         // Event listener for knowledge level filter
         knowledgeLevelFilter.addEventListener('change', function() {
             updateTypeFilters();
         });
-        
+
+        // Event listeners for practice direction radio buttons
+        document.querySelectorAll('input[name="practice-direction"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                practiceDirection = this.value;
+            });
+        });
+
         // Event listener for Start Practice button
         startPracticeButton.addEventListener('click', function() {
             if (allWords.length === 0) {
                 showStatus("Add some words first to practice!", "warning");
                 return;
             }
-            
+
             const numWords = parseInt(wordCountSelect.value);
             if (isNaN(numWords) || numWords < 1) {
                 showStatus("Please enter a valid number of words to practice", "warning");
                 return;
             }
-            
+
             // Determine which words to practice
             if (selectAllWords.checked) {
                 // Filter by knowledge level
                 const maxKnowledge = parseInt(knowledgeLevelFilter.value);
                 const eligibleWords = allWords.filter(word => {
-                    const knowledgeLevel = word.knowledge && word.knowledge[currentUserId] !== undefined 
-                        ? word.knowledge[currentUserId] 
+                    const knowledgeLevel = word.knowledge && word.knowledge[currentUserId] !== undefined
+                        ? word.knowledge[currentUserId]
                         : 0;
                     return knowledgeLevel <= maxKnowledge;
                 });
-                
+
                 if (eligibleWords.length === 0) {
                     showStatus("No words with knowledge level below " + maxKnowledge + "%", "warning");
                     return;
                 }
-                
+
                 selectedWordIds = eligibleWords.map(word => word.key);
             } else {
                 // Use selected words
@@ -2142,13 +2202,13 @@
                 }
                 selectedWordIds = Array.from(checkboxes).map(cb => cb.value);
             }
-            
+
             // Get selected words
             const selectedWords = allWords.filter(word => selectedWordIds.includes(word.key));
-            
+
             // Limit to the number of words requested
             const limitedSelection = selectRandomSubset(selectedWords, numWords);
-            
+
             // Set up practice session
             practiceWords = shuffleArray(limitedSelection);
             currentWordIndex = 0;
@@ -2158,29 +2218,29 @@
             correctCountElement.textContent = "0";
             incorrectCountElement.textContent = "0";
             totalWordsNum.textContent = practiceWords.length;
-            
+
             // Show practice area, hide config
             practiceConfig.classList.add('hidden');
             practiceArea.classList.remove('hidden');
-            
+
             // Start practice
             loadRandomWord();
         });
-        
+
         // Helper function to select random subset of words
         function selectRandomSubset(array, size) {
             if (array.length <= size) {
                 // If we have fewer words than requested, shuffle the whole array
                 return shuffleArray([...array]);
             }
-            
+
             // Shuffle the array first
             const shuffled = shuffleArray([...array]);
-            
+
             // Return the first 'size' elements
             return shuffled.slice(0, size);
         }
-        
+
         // Function to shuffle array using Fisher-Yates algorithm
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
@@ -2189,21 +2249,21 @@
             }
             return array;
         }
-        
+
         // Check answer
         checkAnswerButton.addEventListener('click', () => {
             if (!currentGameWord) return;
-            
+
             let isCorrect = false;
             let isPartiallyCorrect = false;
-            
+
             if (currentLanguage === 'de') {
                 // User is translating from German to English
                 const userAnswer = answerWordEn.value.trim().toLowerCase();
                 const correctAnswer = currentGameWord.english.toLowerCase();
-                
+
                 isCorrect = userAnswer === correctAnswer;
-                
+
                 if (isCorrect) {
                     showFeedback(true, `Correct! "${currentGameWord.english}" is the right translation.`);
                     updateKnowledgeLevel(currentGameWord.key, true);
@@ -2217,15 +2277,15 @@
                 const userAnswer = answerWordDe.value.trim().toLowerCase();
                 const userArticle = answerArticle.value;
                 const correctAnswer = currentGameWord.german.toLowerCase();
-                
+
                 if (currentGameWord.type === 'noun') {
                     // For nouns, check both the article and word
                     const isWordCorrect = userAnswer === correctAnswer;
                     const isArticleCorrect = userArticle === currentGameWord.article;
-                    
+
                     isCorrect = isWordCorrect && isArticleCorrect;
                     isPartiallyCorrect = isWordCorrect && !isArticleCorrect;
-                    
+
                     if (isCorrect) {
                         showFeedback(true, `Correct! "${currentGameWord.article} ${currentGameWord.german}" is the right translation.`);
                         updateKnowledgeLevel(currentGameWord.key, true);
@@ -2241,7 +2301,7 @@
                 } else {
                     // For other word types, just check the word
                     isCorrect = userAnswer === correctAnswer;
-                    
+
                     if (isCorrect) {
                         showFeedback(true, `Correct! "${currentGameWord.german}" is the right translation.`);
                         updateKnowledgeLevel(currentGameWord.key, true);
@@ -2252,12 +2312,12 @@
                     }
                 }
             }
-            
+
             // Update score
             if (isCorrect) {
                 correctCount++;
                 correctCountElement.textContent = correctCount;
-                
+
                 // Automatically advance to next word after 1.5 seconds
                 setTimeout(() => {
                     currentWordIndex++;
@@ -2266,7 +2326,7 @@
             } else {
                 incorrectCount++;
                 incorrectCountElement.textContent = incorrectCount;
-                
+
                 // Hide check button, show next button
                 checkAnswerButton.classList.add('hidden');
                 nextWordButton.classList.remove('hidden');
@@ -2290,15 +2350,15 @@
         function showPracticeSummary() {
             practiceArea.classList.add('hidden');
             practiceSummary.classList.remove('hidden');
-            
+
             // Update summary stats
             summaryCorrect.textContent = correctCount;
             summaryIncorrect.textContent = incorrectCount;
-            
+
             const total = correctCount + incorrectCount;
             const accuracy = total > 0 ? Math.round((correctCount / total) * 100) : 0;
             summaryAccuracy.textContent = `${accuracy}%`;
-            
+
             // Show/hide practice failed words button
             if (failedWords.length > 0) {
                 practiceFailedButton.classList.remove('hidden');
@@ -2306,7 +2366,7 @@
                 practiceFailedButton.classList.add('hidden');
             }
         }
-        
+
         // Practice again button
         practiceAgainButton.addEventListener('click', function() {
             // Keep same settings but restart practice
@@ -2316,35 +2376,35 @@
             failedWords = [];
             correctCountElement.textContent = "0";
             incorrectCountElement.textContent = "0";
-            
+
             // Reshuffle words
             practiceWords = selectRandomSubset(
                 allWords.filter(word => selectedWordIds.includes(word.key)),
                 practiceWords.length
             );
-            
+
             // Show practice area
             practiceSummary.classList.add('hidden');
             practiceArea.classList.remove('hidden');
-            
+
             // Reset progress
             progressBar.style.width = "0%";
-            
+
             // Start practice
             loadRandomWord();
         });
-        
+
         // Practice failed words button
         practiceFailedButton.addEventListener('click', function() {
             if (failedWords.length === 0) {
                 showStatus("No failed words to practice", "warning");
                 return;
             }
-            
+
             // Use failed words for practice
             practiceWords = shuffleArray([...failedWords]);
             failedWords = [];
-            
+
             // Reset counters
             currentWordIndex = 0;
             correctCount = 0;
@@ -2352,25 +2412,25 @@
             correctCountElement.textContent = "0";
             incorrectCountElement.textContent = "0";
             totalWordsNum.textContent = practiceWords.length;
-            
+
             // Show practice area
             practiceSummary.classList.add('hidden');
             practiceArea.classList.remove('hidden');
-            
+
             // Reset progress
             progressBar.style.width = "0%";
-            
+
             // Start practice
             loadRandomWord();
         });
-        
+
         // Change settings button
         changeSettingsButton.addEventListener('click', function() {
             // Go back to settings
             practiceSummary.classList.add('hidden');
             practiceConfig.classList.remove('hidden');
         });
-        
+
         // Select/Deselect all buttons
         document.getElementById('select-all').addEventListener('click', function() {
             const checkboxes = document.querySelectorAll('.word-select-checkbox');
@@ -2381,7 +2441,7 @@
                 }
             });
         });
-        
+
         document.getElementById('deselect-all').addEventListener('click', function() {
             const checkboxes = document.querySelectorAll('.word-select-checkbox');
             checkboxes.forEach(checkbox => {
@@ -2395,16 +2455,16 @@
                 showStatus("Firebase is not connected. Please try again later.", "error");
                 return;
             }
-            
+
             // Check if user is selected
             if (!currentUserId) {
                 showStatus("Please select or add a user first.", "warning");
                 return;
             }
-            
+
             // Clear the current list
             wordList.innerHTML = '';
-            
+
             database.ref('words').once('value')
                 .then(snapshot => {
                     if (!snapshot.exists()) {
@@ -2414,18 +2474,18 @@
                         wordList.appendChild(noWordsRow);
                         return;
                     }
-                    
+
                     const words = snapshot.val();
-                    
+
                     // Create an array of word objects with their keys
                     const wordArray = Object.keys(words).map(key => ({
                         key: key,
                         ...words[key]
                     }));
-                    
+
                     // Sort alphabetically by German word
                     wordArray.sort((a, b) => a.german.localeCompare(b.german));
-                    
+
                     // Render each word
                     wordArray.forEach(word => {
                         renderWordRow(word);
@@ -2436,30 +2496,30 @@
                     showStatus("Error loading words: " + error.message, "error");
                 });
         }
-        
+
         function renderWordRow(word) {
             const row = document.createElement('tr');
             row.dataset.key = word.key;
             row.className = `word-row word-type-${word.type}`;
-            
+
             // Get knowledge level for current user
-            const knowledgeLevel = word.knowledge && word.knowledge[currentUserId] !== undefined 
-                ? word.knowledge[currentUserId] 
+            const knowledgeLevel = word.knowledge && word.knowledge[currentUserId] !== undefined
+                ? word.knowledge[currentUserId]
                 : 0;
-            
+
             let germanText = '';
-            
+
             if (word.type === 'noun') {
                 // Add colored square for article type
-                const articleClass = word.article === 'der' ? 'article-der' : 
-                                     word.article === 'die' ? 'article-die' : 
+                const articleClass = word.article === 'der' ? 'article-der' :
+                                     word.article === 'die' ? 'article-die' :
                                      'article-das';
-                                     
+
                 germanText = `${word.article} ${word.german} <span class="article-square ${articleClass}"></span>`;
             } else {
                 germanText = word.german;
             }
-            
+
             row.innerHTML = `
                 <td>
                     <div class="word-type-indicator"></div>
@@ -2478,43 +2538,118 @@
                     <button class="delete-btn" title="Delete word">×</button>
                 </td>
             `;
-            
+
             // Add event listeners
             const editBtn = row.querySelector('.edit-btn');
             const deleteBtn = row.querySelector('.delete-btn');
-            
+
             if (editBtn) {
                 editBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     enterEditMode(row, word);
                 });
             }
-            
+
             if (deleteBtn) {
                 deleteBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     deleteWord(word.key);
                 });
             }
-            
+
             // Add click event to the entire row to edit
             row.addEventListener('click', () => {
-                enterEditMode(row, word);
+                // Only enter edit mode if not already in edit mode
+                if (!row.classList.contains('edit-mode')) {
+                    enterEditMode(row, word);
+                }
             });
-            
+
             wordList.appendChild(row);
         }
-        
+
+        function updateWordRow(key, updatedWord) {
+            const row = document.querySelector(`tr[data-key="${key}"]`);
+            if (row) {
+                // Remove edit mode class
+                row.classList.remove('edit-mode');
+
+                // Get knowledge level for current user
+                const knowledgeLevel = updatedWord.knowledge && updatedWord.knowledge[currentUserId] !== undefined
+                    ? updatedWord.knowledge[currentUserId]
+                    : 0;
+
+                // Create German text with article square for nouns
+                let germanText = '';
+                if (updatedWord.type === 'noun') {
+                    // Add colored square for article type
+                    const articleClass = updatedWord.article === 'der' ? 'article-der' :
+                                       updatedWord.article === 'die' ? 'article-die' :
+                                       'article-das';
+
+                    germanText = `${updatedWord.article} ${updatedWord.german} <span class="article-square ${articleClass}"></span>`;
+                } else {
+                    germanText = updatedWord.german;
+                }
+
+                row.innerHTML = `
+                    <td>
+                        <div class="word-type-indicator"></div>
+                        ${germanText}
+                    </td>
+                    <td>${updatedWord.english}</td>
+                    <td><span class="word-type-label">${updatedWord.type}</span></td>
+                    <td>
+                        <div class="knowledge-level">
+                            <div class="knowledge-level-bar" style="width: ${knowledgeLevel}%"></div>
+                            <div class="knowledge-level-text">${knowledgeLevel}%</div>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn" title="Delete word">×</button>
+                    </td>
+                `;
+
+                // Reattach event listeners
+                const editBtn = row.querySelector('.edit-btn');
+                const deleteBtn = row.querySelector('.delete-btn');
+
+                if (editBtn) {
+                    editBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        enterEditMode(row, updatedWord);
+                    });
+                }
+
+                if (deleteBtn) {
+                    deleteBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        deleteWord(updatedWord.key);
+                    });
+                }
+
+                // Add click event to the entire row to edit (with edit-mode check)
+                row.addEventListener('click', () => {
+                    if (!row.classList.contains('edit-mode')) {
+                        enterEditMode(row, updatedWord);
+                    }
+                });
+            }
+        }
+
+
+
         function enterEditMode(row, word) {
             // Save the current row content to restore if cancelled
             row.dataset.originalContent = row.innerHTML;
-            
+
             // Create edit form
             let editForm = `
                 <td>
                     <div class="german-input-group edit-mode">
             `;
-            
+
             // Only show article for nouns
             if (word.type === 'noun') {
                 editForm += `
@@ -2525,7 +2660,7 @@
                         </select>
                 `;
             }
-            
+
             editForm += `
                         <input type="text" data-field="german" value="${word.german}" class="edit-german">
                     </div>
@@ -2547,65 +2682,72 @@
                     </div>
                 </td>
             `;
-            
+
             row.innerHTML = editForm;
             row.classList.add('edit-mode');
-            
+
             // Add event listeners
             const saveBtn = row.querySelector('.save-btn');
             const cancelBtn = row.querySelector('.cancel-btn');
-            
+
             if (saveBtn) {
                 saveBtn.addEventListener('click', () => {
                     saveEdit(row, word);
                 });
             }
-            
+
             if (cancelBtn) {
                 cancelBtn.addEventListener('click', () => {
                     cancelEdit(row);
                 });
             }
-            
+
             // Focus on the first input
             const firstInput = row.querySelector('input');
             if (firstInput) firstInput.focus();
         }
-        
+
         function saveEdit(row, word) {
             const key = row.dataset.key;
             const updates = {};
-            
+
             // Get values from inputs
             const germanInput = row.querySelector('[data-field="german"]');
             const englishInput = row.querySelector('[data-field="english"]');
             const articleInput = row.querySelector('[data-field="article"]');
-            
+
             if (!germanInput || !englishInput) {
                 showStatus("Error updating word: Could not find input fields", "error");
                 return;
             }
-            
+
             if (!germanInput.value.trim() || !englishInput.value.trim()) {
                 showStatus("German and English words cannot be empty!", "warning");
                 return;
             }
-            
+
             // Prepare update data
             updates.german = germanInput.value.trim();
             updates.english = englishInput.value.trim();
-            
+
             if (articleInput && word.type === 'noun') {
                 updates.article = articleInput.value;
             }
-            
+
             // Update in Firebase
             database.ref('words/' + key).update(updates)
                 .then(() => {
                     showStatus("Word updated successfully!", "success", 3000);
-                    
-                    // Refresh the word list
-                    loadWordList();
+
+                    // Get the updated word data
+                    return database.ref('words/' + key).once('value');
+                })
+                .then(snapshot => {
+                    if (snapshot.exists()) {
+                        const updatedWord = { key: key, ...snapshot.val() };
+                        // Update just this row instead of refreshing the whole list
+                        updateWordRow(key, updatedWord);
+                    }
                 })
                 .catch(error => {
                     console.error("Error updating word:", error);
@@ -2613,41 +2755,41 @@
                     cancelEdit(row);
                 });
         }
-        
+
         function cancelEdit(row) {
             const key = row.dataset.key;
-            
+
             // Get the word data to restore row properly
             database.ref('words/' + key).once('value')
                 .then(snapshot => {
                     if (snapshot.exists()) {
                         const word = { key: key, ...snapshot.val() };
-                        
+
                         // Create a completely new row
                         const newRow = document.createElement('tr');
                         if (!newRow) return; // Safety check
-                        
+
                         newRow.dataset.key = word.key;
                         newRow.className = `word-row word-type-${word.type}`;
-                        
+
                         // Get knowledge level for current user
-                        const knowledgeLevel = word.knowledge && word.knowledge[currentUserId] !== undefined 
-                            ? word.knowledge[currentUserId] 
+                        const knowledgeLevel = word.knowledge && word.knowledge[currentUserId] !== undefined
+                            ? word.knowledge[currentUserId]
                             : 0;
-                        
+
                         // Create German text with article square for nouns
                         let germanText = '';
                         if (word.type === 'noun') {
                             // Add colored square for article type
-                            const articleClass = word.article === 'der' ? 'article-der' : 
-                                                word.article === 'die' ? 'article-die' : 
+                            const articleClass = word.article === 'der' ? 'article-der' :
+                                                word.article === 'die' ? 'article-die' :
                                                 'article-das';
-                                                
+
                             germanText = `${word.article} ${word.german} <span class="article-square ${articleClass}"></span>`;
                         } else {
                             germanText = word.german;
                         }
-                        
+
                         newRow.innerHTML = `
                             <td>
                                 <div class="word-type-indicator"></div>
@@ -2666,7 +2808,7 @@
                                 <button class="delete-btn" title="Delete word">×</button>
                             </td>
                         `;
-                        
+
                         // Manually create and attach event listeners to avoid null reference errors
                         const createSafeEventListener = (row, selector, eventType, handler) => {
                             const element = row.querySelector(selector);
@@ -2674,23 +2816,23 @@
                                 element.addEventListener(eventType, handler);
                             }
                         };
-                        
+
                         // Safe way to add click event listeners
                         createSafeEventListener(newRow, '.edit-btn', 'click', (e) => {
                             e.stopPropagation();
                             enterEditMode(newRow, word);
                         });
-                        
+
                         createSafeEventListener(newRow, '.delete-btn', 'click', (e) => {
                             e.stopPropagation();
                             deleteWord(word.key);
                         });
-                        
+
                         // Add click event to the entire row for editing
                         newRow.addEventListener('click', () => {
                             enterEditMode(newRow, word);
                         });
-                        
+
                         // Replace the old row
                         if (row.parentNode) {
                             row.parentNode.replaceChild(newRow, row);
@@ -2707,7 +2849,7 @@
                     loadWordList();
                 });
         }
-        
+
         function deleteWord(key) {
             if (confirm("Are you sure you want to delete this word?")) {
                 database.ref('words/' + key).remove()
@@ -2722,13 +2864,13 @@
                     });
             }
         }
-        
+
         // Search functionality
         searchWords.addEventListener('input', function() {
             const searchTerm = this.value.toLowerCase();
             const rows = wordList.querySelectorAll('.word-row');
             let foundAny = false;
-            
+
             rows.forEach(row => {
                 const text = row.textContent.toLowerCase();
                 if (text.includes(searchTerm)) {
@@ -2738,10 +2880,10 @@
                     row.style.display = 'none';
                 }
             });
-            
+
             // Show no results message if needed
             let noResultsRow = wordList.querySelector('.no-results');
-            
+
             if (!foundAny && searchTerm) {
                 if (!noResultsRow) {
                     noResultsRow = document.createElement('tr');
@@ -2756,14 +2898,14 @@
                 noResultsRow.style.display = 'none';
             }
         });
-        
+
         // Update word count
         function updateWordCount() {
             if (!database) {
                 wordCountElement.textContent = "0";
                 return;
             }
-            
+
             try {
                 database.ref('words').once('value')
                     .then(snapshot => {
@@ -2810,7 +2952,7 @@
                 nextWordButton.click();
             }
         });
-        
+
         // Add event listener for Enter key in user form
         newUserName.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
